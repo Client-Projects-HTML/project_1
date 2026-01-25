@@ -1,0 +1,43 @@
+/* RTL Support */
+[dir="rtl"] body {
+    text-align: right;
+    direction: rtl;
+}
+
+[dir="rtl"] .ms-auto {
+    margin-right: auto !important;
+    margin-left: 0 !important;
+}
+
+[dir="rtl"] .me-auto {
+    margin-left: auto !important;
+    margin-right: 0 !important;
+}
+
+[dir="rtl"] .ps-0 {
+    padding-right: 0 !important;
+}
+
+[dir="rtl"] .pe-0 {
+    padding-left: 0 !important;
+}
+
+/* RTL Footer */
+[dir="rtl"] footer::before {
+    background: radial-gradient(circle at top left, rgba(13, 110, 253, 0.1), transparent 40%);
+}
+
+[dir="rtl"] footer a:hover {
+    padding-left: 0;
+    padding-right: 4px;
+}
+
+[dir="rtl"] .social-icon-btn {
+    transform: scaleX(-1);
+    /* If icons are directional, otherwise unrelated */
+}
+
+/* Reset social icon hover for RTL */
+[dir="rtl"] .social-icon-btn:hover {
+    padding-right: 0;
+}

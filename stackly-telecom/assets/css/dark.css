@@ -1,0 +1,167 @@
+/* 
+ * Stackly - Dark Mode Styles
+ * Overrides semantic variables and specific Bootstrap components
+ */
+
+[data-theme="dark"] {
+    /* Semantic Colors - Dark Mode Override */
+    --bg-body: #0a192f;
+    --bg-surface: #112240;
+    --bg-card: #1d3557;
+    --text-main: #e6f1ff;
+    --text-muted: #8892b0;
+    --border-color: #233554;
+    --input-bg: #112240;
+    --input-border: #233554;
+
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+}
+
+/* Base Overrides */
+[data-theme="dark"] body {
+    background-color: var(--bg-body);
+    color: var(--text-main);
+}
+
+/* Bootstrap Utilities Override */
+[data-theme="dark"] .bg-light {
+    background-color: var(--bg-surface) !important;
+}
+
+[data-theme="dark"] .bg-white {
+    background-color: var(--bg-card) !important;
+}
+
+[data-theme="dark"] .text-dark {
+    color: var(--text-main) !important;
+}
+
+[data-theme="dark"] .text-muted {
+    color: var(--text-muted) !important;
+}
+
+[data-theme="dark"] .border {
+    border-color: var(--border-color) !important;
+}
+
+/* Navbar */
+[data-theme="dark"] .navbar {
+    background-color: var(--bg-surface) !important;
+    border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .navbar-light .navbar-nav .nav-link {
+    color: var(--text-muted);
+}
+
+[data-theme="dark"] .navbar-light .navbar-nav .nav-link:hover,
+[data-theme="dark"] .navbar-light .navbar-nav .nav-link.active {
+    color: var(--primary-color);
+}
+
+[data-theme="dark"] .navbar-light .navbar-brand {
+    color: var(--text-main) !important;
+}
+
+[data-theme="dark"] .navbar-light .navbar-toggler {
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .navbar-light .navbar-toggler-icon {
+    filter: invert(1);
+    opacity: 0.8;
+}
+
+/* Cards */
+[data-theme="dark"] .card {
+    background-color: var(--bg-card);
+    border-color: var(--border-color);
+    color: var(--text-main);
+}
+
+/* Tables */
+[data-theme="dark"] .table {
+    color: var(--text-main);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .table-hover>tbody>tr:hover>* {
+    color: var(--text-main);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .table-light {
+    background-color: var(--bg-surface);
+    color: var(--text-main);
+    border-color: var(--border-color);
+}
+
+/* Forms */
+[data-theme="dark"] .form-control,
+[data-theme="dark"] .form-select {
+    background-color: var(--input-bg);
+    border-color: var(--input-border);
+    color: var(--text-main);
+}
+
+[data-theme="dark"] .form-control::placeholder {
+    color: var(--text-muted);
+}
+
+[data-theme="dark"] .input-group-text {
+    background-color: var(--bg-surface);
+    border-color: var(--input-border);
+    color: var(--text-main);
+}
+
+/* Badges & Buttons */
+[data-theme="dark"] .btn-outline-dark {
+    color: var(--text-main);
+    border-color: var(--text-main);
+}
+
+[data-theme="dark"] .btn-outline-dark:hover {
+    background-color: var(--text-main);
+    color: var(--bg-body);
+}
+
+[data-theme="dark"] .bg-light.text-dark {
+    color: var(--bg-body) !important;
+    /* Fix for badges using bg-light text-dark */
+}
+
+/* List Groups */
+[data-theme="dark"] .list-group-item {
+    background-color: var(--bg-card);
+    border-color: var(--border-color);
+    color: var(--text-main);
+}
+
+/* Dropdowns */
+[data-theme="dark"] .dropdown-menu {
+    background-color: var(--bg-card);
+    border-color: var(--border-color);
+    box-shadow: var(--shadow-xl);
+}
+
+[data-theme="dark"] .dropdown-item {
+    color: var(--text-main);
+}
+
+[data-theme="dark"] .dropdown-item:hover {
+    background-color: var(--bg-surface);
+}
+
+[data-theme="dark"] .dropdown-item.text-muted {
+    color: var(--text-muted) !important;
+}
+
+/* Specific Component Overrides */
+[data-theme="dark"] .hero-section {
+    background: linear-gradient(135deg, #0a192f 0%, #112240 100%) !important;
+}
+
+[data-theme="dark"] .bg-light-subtle {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+}

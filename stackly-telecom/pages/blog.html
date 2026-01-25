@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Stackly Telecom</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dark.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+
+<body data-theme="light">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3 text-telecom" href="index.html"><i
+                    class="fas fa-tower-cell me-2"></i>Stackly</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="d-flex align-items-center ms-lg-4">
+                    <button class="btn btn-link text-body me-3 p-0" id="theme-toggle"><i
+                            class="fas fa-moon"></i></button>
+                    <a href="login.html" class="btn btn-outline-primary me-2 btn-sm">Client Portal</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="page-header py-5 bg-light mt-5">
+        <div class="container py-5 text-center">
+            <h1 class="display-4 fw-bold">Industry Insights</h1>
+            <p class="lead text-muted">Latest news and updates from the telecom world.</p>
+        </div>
+    </div>
+
+    <!-- Blog Content -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row">
+                <!-- Articles List -->
+                <div class="col-lg-8">
+                    <!-- Article 1 -->
+                    <div class="card border-0 shadow-sm mb-4">
+                        <img src="https://placehold.co/800x400/0056b3/fff?text=5G+Future" class="card-img-top"
+                            alt="Blog">
+                        <div class="card-body p-4">
+                            <div class="mb-2 text-muted small"><i class="far fa-calendar me-2"></i> Jan 24, 2026
+                                &nbsp;|&nbsp; <i class="far fa-folder me-2"></i> Technology</div>
+                            <h3 class="fw-bold"><a href="blog-details.html" class="text-decoration-none text-dark">The
+                                    Future of 5G Standalone Networks</a></h3>
+                            <p class="text-muted">Exploring the benefits of SA architectures for industrial IoT and huge
+                                machine-type communications...</p>
+                            <a href="blog-details.html" class="btn btn-link text-telecom p-0 fw-bold">Read More</a>
+                        </div>
+                    </div>
+                    <!-- Article 2 -->
+                    <div class="card border-0 shadow-sm mb-4">
+                        <img src="https://placehold.co/800x400/212529/fff?text=Fiber+In+Rural" class="card-img-top"
+                            alt="Blog">
+                        <div class="card-body p-4">
+                            <div class="mb-2 text-muted small"><i class="far fa-calendar me-2"></i> Jan 12, 2026
+                                &nbsp;|&nbsp; <i class="far fa-folder me-2"></i> Policy</div>
+                            <h3 class="fw-bold"><a href="blog-details.html"
+                                    class="text-decoration-none text-dark">Bridging the Divide: Rural Fiber
+                                    Initiatives</a></h3>
+                            <p class="text-muted">How federal funding is accelerating the deployment of gigabit-capable
+                                fiber to underserved communities...</p>
+                            <a href="blog-details.html" class="btn btn-link text-telecom p-0 fw-bold">Read More</a>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <nav>
+                        <ul class="pagination justify-content-center mt-5">
+                            <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="col-lg-4">
+                    <!-- Search -->
+                    <div class="card border-0 shadow-sm p-4 mb-4">
+                        <h5 class="fw-bold mb-3">Search</h5>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search articles...">
+                            <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Categories -->
+                    <div class="card border-0 shadow-sm p-4 mb-4">
+                        <h5 class="fw-bold mb-3">Categories</h5>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><a href="#"
+                                    class="text-decoration-none text-muted d-block py-1 hover-telecom">Industry News
+                                    (12)</a></li>
+                            <li class="mb-2"><a href="#"
+                                    class="text-decoration-none text-muted d-block py-1 hover-telecom">Technology
+                                    (8)</a></li>
+                            <li class="mb-2"><a href="#"
+                                    class="text-decoration-none text-muted d-block py-1 hover-telecom">Company Updates
+                                    (5)</a></li>
+                            <li class="mb-2"><a href="#"
+                                    class="text-decoration-none text-muted d-block py-1 hover-telecom">Case Studies
+                                    (10)</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Tags -->
+                    <div class="card border-0 shadow-sm p-4 mb-4">
+                        <h5 class="fw-bold mb-3">Tags</h5>
+                        <div class="d-flex flex-wrap gap-2">
+                            <a href="#" class="badge bg-light text-dark text-decoration-none border">5G</a>
+                            <a href="#" class="badge bg-light text-dark text-decoration-none border">Fiber</a>
+                            <a href="#" class="badge bg-light text-dark text-decoration-none border">Safety</a>
+                            <a href="#" class="badge bg-light text-dark text-decoration-none border">IoT</a>
+                            <a href="#" class="badge bg-light text-dark text-decoration-none border">Construction</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-5 pb-3">
+        <div class="container">
+            <div class="text-center text-muted small">&copy; 2026 Stackly. All Rights Reserved.</div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

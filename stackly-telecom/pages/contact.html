@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Stackly Telecom</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dark.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+
+<body data-theme="light">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3 text-telecom" href="index.html"><i
+                    class="fas fa-tower-cell me-2"></i>Stackly</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="d-flex align-items-center ms-lg-4">
+                    <button class="btn btn-link text-body me-3 p-0" id="theme-toggle"><i
+                            class="fas fa-moon"></i></button>
+                    <a href="login.html" class="btn btn-outline-primary me-2 btn-sm">Client Portal</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="page-header py-5 bg-light mt-5">
+        <div class="container py-5 text-center">
+            <h1 class="display-4 fw-bold">Contact Us</h1>
+            <p class="lead text-muted">Ready to start your next project? Get in touch.</p>
+        </div>
+    </div>
+
+    <!-- Contact Form & Info -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row g-5">
+                <!-- Form -->
+                <div class="col-lg-7">
+                    <div class="card border-0 shadow-sm p-4 p-md-5">
+                        <h3 class="fw-bold mb-4">Send us a message</h3>
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label text-muted small">First Name</label>
+                                    <input type="text" class="form-control" placeholder="John">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label text-muted small">Last Name</label>
+                                    <input type="text" class="form-control" placeholder="Doe">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label text-muted small">Email Address</label>
+                                    <input type="email" class="form-control" placeholder="john@company.com">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label text-muted small">Subject</label>
+                                    <select class="form-select">
+                                        <option>General Inquiry</option>
+                                        <option>Request Quote</option>
+                                        <option>Site Survey Request</option>
+                                        <option>Careers</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label text-muted small">Message</label>
+                                    <textarea class="form-control" rows="5"
+                                        placeholder="Tell us about your project..."></textarea>
+                                </div>
+                                <div class="col-12 mt-4">
+                                    <button class="btn btn-telecom px-5 py-2 fw-bold">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Info -->
+                <div class="col-lg-5">
+                    <div class="ps-lg-4">
+                        <h4 class="fw-bold mb-4">Contact Information</h4>
+
+                        <div class="d-flex mb-4">
+                            <div class="icon-box-sm bg-light text-telecom rounded-circle me-3 flex-shrink-0 d-flex align-items-center justify-content-center"
+                                style="width: 50px; height: 50px;">
+                                <i class="fas fa-map-marker-alt fa-lg"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-1">Headquarters</h6>
+                                <p class="text-muted small">1234 Telecom Blvd, Suite 200<br>Tech City, TC 90210</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex mb-4">
+                            <div class="icon-box-sm bg-light text-telecom rounded-circle me-3 flex-shrink-0 d-flex align-items-center justify-content-center"
+                                style="width: 50px; height: 50px;">
+                                <i class="fas fa-phone fa-lg"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-1">Phone</h6>
+                                <p class="text-muted small mb-0">Main: (800) 555-0199</p>
+                                <p class="text-muted small">Support: (800) 555-0198</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex mb-5">
+                            <div class="icon-box-sm bg-light text-telecom rounded-circle me-3 flex-shrink-0 d-flex align-items-center justify-content-center"
+                                style="width: 50px; height: 50px;">
+                                <i class="fas fa-envelope fa-lg"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-1">Email</h6>
+                                <p class="text-muted small mb-0">hello@stackly.com</p>
+                                <p class="text-muted small">support@stackly.com</p>
+                            </div>
+                        </div>
+
+                        <!-- Map -->
+                        <div class="map-container rounded overflow-hidden shadow-sm">
+                            <img src="https://placehold.co/600x300/e9ecef/212529?text=Google+Maps+Embed"
+                                class="img-fluid w-100" alt="Map">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-5 pb-3">
+        <div class="container">
+            <div class="text-center text-muted small">&copy; 2026 Stackly. All Rights Reserved.</div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

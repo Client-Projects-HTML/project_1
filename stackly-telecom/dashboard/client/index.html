@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Dashboard - Stackly Telecom</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dark.css">
+    <link rel="stylesheet" href="../../assets/css/rtl.css">
+</head>
+
+<body class="dashboard-page" data-theme="light">
+    <div class="dashboard-layout" id="layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="p-4 mb-4">
+                <a href="../../pages/index.html" class="d-flex align-items-center text-decoration-none text-white">
+                    <i class="fas fa-tower-cell fa-lg me-2"></i>
+                    <span class="fs-4 fw-bold">Stackly</span>
+                </a>
+                <div class="small text-white-50 mt-1">Client Portal</div>
+            </div>
+
+            <nav class="flex-grow-1">
+                <a href="index.html" class="sidebar-link active">
+                    <i class="fas fa-th-large"></i> <span>Overview</span>
+                </a>
+                <a href="my-projects.html" class="sidebar-link">
+                    <i class="fas fa-project-diagram"></i> <span>My Projects</span>
+                </a>
+                <a href="documents.html" class="sidebar-link">
+                    <i class="fas fa-file-alt"></i> <span>Documents</span>
+                </a>
+                <a href="messages.html" class="sidebar-link">
+                    <i class="fas fa-envelope"></i> <span>Messages</span>
+                </a>
+            </nav>
+
+            <div class="p-4 mt-auto">
+                <a href="../../pages/login.html" class="btn btn-outline-light btn-sm w-100">
+                    <i class="fas fa-sign-out-alt me-2"></i>Logout
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Unified Dashboard Header -->
+            <header class="dashboard-header">
+                <div class="d-flex align-items-center">
+                    <button class="header-icon-btn sidebar-toggler me-3"
+                        onclick="document.body.classList.toggle('sidebar-collapsed')">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+                <div class="dashboard-header-right">
+                    <button class="header-icon-btn position-relative">
+                        <i class="far fa-bell"></i>
+                        <span
+                            class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"
+                            style="width: 8px; height: 8px;"></span>
+                    </button>
+                    <div class="user-profile-chip">
+                        <img src="https://placehold.co/32x32/fff/333?text=C" class="user-avatar-sm" alt="User">
+                        <div class="user-info-text d-none d-md-flex">
+                            <span class="user-name-text">David Client</span>
+                            <span class="user-role-text">Client User</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="container-fluid p-4">
+                <h2 class="fw-bold mb-2">Welcome back, David!</h2>
+                <p class="text-muted mb-4">Here's what's happening with your projects today.</p>
+
+                <!-- Client KPIs -->
+                <div class="row g-3 mb-4">
+                    <div class="col-md-4">
+                        <div class="dashboard-card h-100 kpi-card kpi-card-primary">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <span class="kpi-label">Active Projects</span>
+                                <span class="badge rounded-pill"><i class="fas fa-project-diagram"></i></span>
+                            </div>
+                            <div>
+                                <div class="kpi-value">3</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="dashboard-card h-100 kpi-card">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <span class="kpi-label">Pending Surveys</span>
+                                <span class="badge bg-warning-subtle text-warning rounded-pill"><i
+                                        class="fas fa-clipboard-list"></i></span>
+                            </div>
+                            <div>
+                                <div class="kpi-value">1</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="dashboard-card h-100 kpi-card">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <span class="kpi-label">Unread Messages</span>
+                                <span class="badge bg-info-subtle text-info rounded-pill"><i
+                                        class="fas fa-envelope"></i></span>
+                            </div>
+                            <div>
+                                <div class="kpi-value">5</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Projects List -->
+                <div class="dashboard-card client-table-card client-card">
+                    <div class="p-4 border-bottom bg-light bg-opacity-25">
+                        <h5 class="fw-bold mb-0 fs-5">Current Project Status</h5>
+                    </div>
+                    <div class="p-0">
+                        <div class="table-responsive">
+                            <table class="table dashboard-table align-middle">
+                                <thead>
+                                    <tr>
+                                        <th>Project Name</th>
+                                        <th>Date Started</th>
+                                        <th>Status</th>
+                                        <th>Completion</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="fw-bold">Downtown 5G Rollout - Phase 1</div>
+                                            <div class="small text-muted">ID: #PRJ-2024-001</div>
+                                        </td>
+                                        <td>Jan 05, 2026</td>
+                                        <td><span class="badge bg-primary-subtle text-primary">In Progress</span></td>
+                                        <td style="width: 20%;">
+                                            <div class="progress" style="height: 6px;">
+                                                <div class="progress-bar bg-success" role="progressbar"
+                                                    style="width: 75%"></div>
+                                            </div>
+                                        </td>
+                                        <td><a href="my-projects.html" class="btn btn-sm btn-outline-primary">View</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="fw-bold">Westside Fiber Expansion</div>
+                                            <div class="small text-muted">ID: #PRJ-2024-002</div>
+                                        </td>
+                                        <td>Jan 15, 2026</td>
+                                        <td><span class="badge bg-warning-subtle text-warning-emphasis">Planning</span>
+                                        </td>
+                                        <td style="width: 20%;">
+                                            <div class="progress" style="height: 6px;">
+                                                <div class="progress-bar bg-info" role="progressbar" style="width: 15%">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td><a href="my-projects.html" class="btn btn-sm btn-outline-primary">View</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/dashboard.js"></script>
+</body>
+
+</html>
