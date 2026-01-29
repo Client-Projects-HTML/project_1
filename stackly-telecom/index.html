@@ -22,9 +22,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/dark.css">
-    <link rel="stylesheet" href="../assets/css/rtl.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
 </head>
 
 <body data-theme="light">
@@ -35,12 +35,20 @@
             <a class="navbar-brand fw-bold fs-3 text-telecom" href="index.html">
                 <i class="fas fa-tower-cell me-2"></i>Stackly
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="d-flex align-items-center ms-auto order-lg-3">
+                <button class="btn btn-link text-body p-0 ms-lg-4" id="language-toggle" aria-label="Switch Language">
+                    <i class="fas fa-language"></i>
+                </button>
+                <button class="btn btn-link text-body p-0 ms-3" id="theme-toggle" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse order-lg-2" id="navbarNav">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html" aria-current="page">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
@@ -48,11 +56,7 @@
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
                 <div class="d-flex align-items-center ms-lg-4">
-                    <button class="btn btn-link text-body me-3 p-0" id="theme-toggle" aria-label="Toggle Dark Mode">
-                        <i class="fas fa-moon"></i>
-                    </button>
-                    <a href="login.html" class="btn btn-outline-primary me-2 btn-sm">Client Portal</a>
-                    <a href="contact.html" class="btn btn-telecom btn-sm">Request Survey</a>
+                    <a href="login.html" class="btn btn-outline-primary btn-sm">Client Portal</a>
                 </div>
             </div>
         </div>
@@ -77,8 +81,8 @@
                     <!-- Abstract Phone/Tower Graphic Placeholder -->
                     <div class="card border-0 shadow-lg p-3 bg-white mx-auto"
                         style="max-width: 500px; transform: rotate(-2deg);">
-                        <img src="https://placehold.co/600x400/0056b3/ffffff?text=Telecom+Coverage+Map"
-                            alt="Coverage Map" class="img-fluid rounded mb-3">
+                        <img src="assets/images/network-map.png" alt="Telecom Network Coverage Map"
+                            class="img-fluid rounded mb-3">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
                                 <h5 class="fw-bold mb-0">99.9% Uptime</h5>
@@ -109,7 +113,7 @@
                         <h4 class="fw-bold">Fiber Optic Deployment</h4>
                         <p class="text-muted">End-to-end fiber installation, splicing, and testing for long-haul and
                             metro networks.</p>
-                        <a href="service-details.html"
+                        <a href="service-details.html?service=fiber"
                             class="text-decoration-none fw-bold mt-auto show-hover-arrow">Learn more <i
                                 class="fas fa-arrow-right ms-1"></i></a>
                     </div>
@@ -123,7 +127,7 @@
                         <h4 class="fw-bold">Wireless & 5G</h4>
                         <p class="text-muted">Small cell fabrication, macro tower upgrades, and DAS implementation
                             services.</p>
-                        <a href="service-details.html"
+                        <a href="service-details.html?service=wireless"
                             class="text-decoration-none fw-bold mt-auto show-hover-arrow">Learn more <i
                                 class="fas fa-arrow-right ms-1"></i></a>
                     </div>
@@ -137,7 +141,7 @@
                         <h4 class="fw-bold">Maintenance & Repair</h4>
                         <p class="text-muted">24/7 emergency response, site audits, and preventative maintenance
                             programs.</p>
-                        <a href="service-details.html"
+                        <a href="service-details.html?service=maintenance"
                             class="text-decoration-none fw-bold mt-auto show-hover-arrow">Learn more <i
                                 class="fas fa-arrow-right ms-1"></i></a>
                     </div>
@@ -205,7 +209,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 offset-lg-1">
-                    <img src="https://placehold.co/600x700/e9ecef/212529?text=Technician+at+Work" alt="Process"
+                    <img src="assets/images/technician-work.png" alt="Professional Telecom Technician at Work"
                         class="img-fluid rounded-3 shadow-lg">
                 </div>
             </div>
@@ -290,7 +294,6 @@
     </section>
 
     <!-- Footer -->
-    <!-- Footer -->
     <footer class="pt-5 pb-3">
         <div class="container position-relative z-1">
             <div class="row g-5 mb-5">
@@ -317,7 +320,7 @@
                         <li class="mb-2"><a href="services.html" class="text-decoration-none">Services</a></li>
                         <li class="mb-2"><a href="projects.html" class="text-decoration-none">Projects</a></li>
                         <li class="mb-2"><a href="blog.html" class="text-decoration-none">Blog</a></li>
-                        <li class="mb-2"><a href="careers.html" class="text-decoration-none">Careers</a></li>
+                        <li class="mb-2"><a href="404.html" class="text-decoration-none">Careers</a></li>
                     </ul>
                 </div>
 
@@ -325,8 +328,8 @@
                 <div class="col-lg-2 col-6">
                     <h5 class="fw-bold text-white mb-4">Support</h5>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#" class="text-decoration-none">Help Center</a></li>
-                        <li class="mb-2"><a href="#" class="text-decoration-none">Documentation</a></li>
+                        <li class="mb-2"><a href="404.html" class="text-decoration-none">Help Center</a></li>
+                        <li class="mb-2"><a href="404.html" class="text-decoration-none">Documentation</a></li>
                         <li class="mb-2"><a href="privacy.html" class="text-decoration-none">Privacy Policy</a></li>
                         <li class="mb-2"><a href="terms.html" class="text-decoration-none">Terms of Service</a></li>
                         <li class="mb-2"><a href="contact.html" class="text-decoration-none">Contact Us</a></li>
@@ -368,7 +371,7 @@
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/js/main.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>

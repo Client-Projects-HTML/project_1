@@ -5,10 +5,13 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     initTheme();
-    initStickyHeader();
-    initAnimations();
+    initLanguage(); // Add RTL support
+    // initStickyHeader(); // Disabled per user request
+    // initAnimations(); // Disabled per user request
     initA11y();
     initDemoAuth();
+    // initPageTransitions(); // Disabled per user request
+    initProjectFilters();
 });
 
 /* -------------------------------------------------------------------------- */
@@ -56,16 +59,56 @@ function updateThemeIcon(theme) {
 
     const icon = themeToggle.querySelector('i');
     if (icon) {
-        // Smooth transition
-        icon.style.opacity = '0';
-        setTimeout(() => {
-            if (theme === 'dark') {
-                icon.className = 'fas fa-sun';
-            } else {
-                icon.className = 'fas fa-moon';
-            }
-            icon.style.opacity = '1';
-        }, 150);
+        if (theme === 'dark') {
+            icon.className = 'fas fa-sun';
+        } else {
+            icon.className = 'fas fa-moon';
+        }
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                Language Toggle                             */
+/* -------------------------------------------------------------------------- */
+function initLanguage() {
+    const langToggle = document.getElementById('language-toggle');
+
+    // Get saved preference or use default
+    const currentLang = localStorage.getItem('language') || 'ltr';
+
+    // Apply initial language
+    setLanguage(currentLang);
+
+    if (langToggle) {
+        // Update icon based on initial language
+        updateLanguageIcon(currentLang);
+
+        langToggle.addEventListener('click', () => {
+            const currentDir = document.body.getAttribute('dir') || 'ltr';
+            const newLang = currentDir === 'rtl' ? 'ltr' : 'rtl';
+            setLanguage(newLang);
+            updateLanguageIcon(newLang);
+        });
+    }
+}
+
+function setLanguage(lang) {
+    document.body.setAttribute('dir', lang);
+    localStorage.setItem('language', lang);
+}
+
+function updateLanguageIcon(lang) {
+    const langToggle = document.getElementById('language-toggle');
+    if (!langToggle) return;
+
+    const icon = langToggle.querySelector('i');
+
+    if (lang === 'rtl') {
+        if (icon) icon.className = 'fas fa-globe';
+        langToggle.setAttribute('aria-label', 'Switch to English');
+    } else {
+        if (icon) icon.className = 'fas fa-language';
+        langToggle.setAttribute('aria-label', 'Switch to Arabic (RTL)');
     }
 }
 
@@ -234,3 +277,88 @@ function showError(msg) {
         errorAlert.classList.remove('d-none');
     }
 }
+
+/* -------------------------------------------------------------------------- */
+/*                            Page Transitions                                */
+/* -------------------------------------------------------------------------- */
+function initPageTransitions() {
+    // Get all navigation links (excluding external links and anchors)
+    const navLinks = document.querySelectorAll('a[href]:not([href^="#"]):not([href^="http"]):not([target="_blank"])');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+
+            // Skip if it's a special link (login, dashboard, etc.)
+            if (!href || href === '#' || this.hasAttribute('data-no-transition')) {
+                return;
+            }
+
+            e.preventDefault();
+
+            // Add transitioning class to trigger fade-out
+            document.body.classList.add('page-transitioning');
+
+            // Navigate after animation completes
+            setTimeout(() => {
+                window.location.href = href;
+            }, 200); // Match the fadeOut animation duration
+        });
+    });
+}
+
+/* -------------------------------------------------------------------------- */
+/*                            Project Filters                                 */
+/* -------------------------------------------------------------------------- */
+function initProjectFilters() {
+    const categoryButtons = document.querySelectorAll('#categoryFilter button');
+    const statusSelect = document.getElementById('statusFilter');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    if (!categoryButtons.length || !statusSelect || !projectCards.length) {
+        return; // Not on projects page
+    }
+
+    let activeCategory = 'all';
+    let activeStatus = 'all';
+
+    // Category button click handler
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            // Update active button
+            categoryButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+
+            // Update active category
+            activeCategory = this.getAttribute('data-filter');
+
+            // Apply filters
+            filterProjects();
+        });
+    });
+
+    // Status dropdown change handler
+    statusSelect.addEventListener('change', function () {
+        activeStatus = this.value;
+        filterProjects();
+    });
+
+    // Filter function
+    function filterProjects() {
+        projectCards.forEach(card => {
+            const cardCategory = card.getAttribute('data-category');
+            const cardStatus = card.getAttribute('data-status');
+
+            const categoryMatch = activeCategory === 'all' || cardCategory === activeCategory;
+            const statusMatch = activeStatus === 'all' || cardStatus === activeStatus;
+
+            if (categoryMatch && statusMatch) {
+                card.style.display = '';
+                card.style.animation = 'fadeIn 0.3s ease-in';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+}
+

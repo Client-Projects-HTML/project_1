@@ -17,11 +17,11 @@
         <!-- Sidebar -->
         <aside class="sidebar">
             <div class="p-4 mb-4">
-                <a href="../../pages/index.html" class="d-flex align-items-center text-decoration-none text-white">
+                <a href="../../index.html" class="d-flex align-items-center text-decoration-none text-telecom">
                     <i class="fas fa-tower-cell fa-lg me-2"></i>
                     <span class="fs-4 fw-bold">Stackly</span>
                 </a>
-                <div class="small text-white-50 mt-1">Admin Portal</div>
+                <div class="small text-muted mt-1">Admin Portal</div>
             </div>
 
             <nav class="flex-grow-1">
@@ -33,6 +33,9 @@
                 </a>
                 <a href="clients.html" class="sidebar-link">
                     <i class="fas fa-users"></i> <span>Clients</span>
+                </a>
+                <a href="messages.html" class="sidebar-link">
+                    <i class="fas fa-envelope"></i> <span>Messages</span>
                 </a>
                 <a href="technicians.html" class="sidebar-link">
                     <i class="fas fa-hard-hat"></i> <span>Technicians</span>
@@ -46,7 +49,7 @@
             </nav>
 
             <div class="p-4 mt-auto">
-                <a href="../../pages/login.html" class="btn btn-outline-light btn-sm w-100">
+                <a href="../../login.html" class="btn btn-outline-danger btn-sm w-100">
                     <i class="fas fa-sign-out-alt me-2"></i>Logout
                 </a>
             </div>
@@ -57,12 +60,14 @@
             <!-- Unified Dashboard Header -->
             <header class="dashboard-header">
                 <div class="d-flex align-items-center">
-                    <button class="header-icon-btn sidebar-toggler me-3"
-                        onclick="document.body.classList.toggle('sidebar-collapsed')">
+                    <button class="header-icon-btn sidebar-toggler me-3">
                         <i class="fas fa-bars"></i>
                     </button>
                 </div>
                 <div class="dashboard-header-right">
+                    <button class="header-icon-btn" id="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
                     <button class="header-icon-btn position-relative">
                         <i class="far fa-bell"></i>
                         <span
@@ -102,14 +107,14 @@
                             <tbody>
                                 <tr>
                                     <td>
-                                        <div class="fw-bold">Downtown 5G Rollout</div>
+                                        <div class="fw-bold text-dark">Downtown 5G Rollout</div>
                                         <div class="small text-muted">#PRJ-001</div>
                                     </td>
-                                    <td>MetroFiber Inc.</td>
+                                    <td class="text-dark">MetroFiber Inc.</td>
                                     <td><span class="badge bg-primary-subtle text-primary">Active</span></td>
                                     <td style="width: 20%">
                                         <div class="d-flex align-items-center">
-                                            <span class="me-2 small">75%</span>
+                                            <span class="me-2 small text-dark">75%</span>
                                             <div class="progress flex-grow-1" style="height: 4px;">
                                                 <div class="progress-bar bg-primary" style="width: 75%"></div>
                                             </div>
@@ -124,19 +129,35 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <button class="btn btn-sm btn-light"><i class="fas fa-ellipsis-v"></i></button>
+                                        <div class="dropdown">
+                                            <button class="btn btn-sm btn-outline-secondary" type="button"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="fas fa-ellipsis-v"></i>
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                <li><a class="dropdown-item" href="#"><i
+                                                            class="fas fa-edit me-2"></i>Edit</a></li>
+                                                <li><a class="dropdown-item" href="#"><i
+                                                            class="fas fa-eye me-2"></i>View Details</a></li>
+                                                <li>
+                                                    <hr class="dropdown-divider">
+                                                </li>
+                                                <li><a class="dropdown-item text-danger" href="#"><i
+                                                            class="fas fa-trash me-2"></i>Delete</a></li>
+                                            </ul>
+                                        </div>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <div class="fw-bold">Westside Cabling</div>
+                                        <div class="fw-bold text-dark">Westside Cabling</div>
                                         <div class="small text-muted">#PRJ-002</div>
                                     </td>
-                                    <td>TechSolutions</td>
-                                    <td><span class="badge bg-warning-subtle text-warning-emphasis">Planning</span></td>
+                                    <td class="text-dark">TechSolutions</td>
+                                    <td><span class="badge bg-warning-subtle text-warning">Planning</span></td>
                                     <td>
                                         <div class="d-flex align-items-center">
-                                            <span class="me-2 small">15%</span>
+                                            <span class="me-2 small text-dark">15%</span>
                                             <div class="progress flex-grow-1" style="height: 4px;">
                                                 <div class="progress-bar bg-warning" style="width: 15%"></div>
                                             </div>
@@ -149,7 +170,23 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <button class="btn btn-sm btn-light"><i class="fas fa-ellipsis-v"></i></button>
+                                        <div class="dropdown">
+                                            <button class="btn btn-sm btn-outline-secondary" type="button"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="fas fa-ellipsis-v"></i>
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                <li><a class="dropdown-item" href="#"><i
+                                                            class="fas fa-edit me-2"></i>Edit</a></li>
+                                                <li><a class="dropdown-item" href="#"><i
+                                                            class="fas fa-eye me-2"></i>View Details</a></li>
+                                                <li>
+                                                    <hr class="dropdown-divider">
+                                                </li>
+                                                <li><a class="dropdown-item text-danger" href="#"><i
+                                                            class="fas fa-trash me-2"></i>Delete</a></li>
+                                            </ul>
+                                        </div>
                                     </td>
                                 </tr>
                             </tbody>

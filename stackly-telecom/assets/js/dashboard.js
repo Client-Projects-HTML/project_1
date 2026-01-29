@@ -9,15 +9,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function initSidebar() {
     const togglers = document.querySelectorAll('.sidebar-toggler');
-    const layout = document.querySelector('.dashboard-layout');
 
-    if (togglers.length > 0 && layout) {
+    // Create overlay if it doesn't exist
+    let overlay = document.querySelector('.sidebar-overlay');
+    if (!overlay && document.querySelector('.dashboard-layout')) {
+        overlay = document.createElement('div');
+        overlay.className = 'sidebar-overlay';
+        document.body.appendChild(overlay);
+
+        overlay.addEventListener('click', () => {
+            document.body.classList.remove('sidebar-open');
+        });
+    }
+
+    if (togglers.length > 0) {
         togglers.forEach(btn => {
-            btn.addEventListener('click', () => {
-                layout.classList.toggle('sidebar-collapsed');
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.body.classList.toggle('sidebar-open');
             });
         });
     }
+
+    // Close sidebar on link click (mobile)
+    const sidebarLinks = document.querySelectorAll('.sidebar-link');
+    sidebarLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                document.body.classList.remove('sidebar-open');
+            }
+        });
+    });
 }
 
 function initCharts() {

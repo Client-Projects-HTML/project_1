@@ -17,11 +17,11 @@
         <!-- Sidebar -->
         <aside class="sidebar">
             <div class="p-4 mb-4">
-                <a href="../../pages/index.html" class="d-flex align-items-center text-decoration-none text-white">
+                <a href="../../index.html" class="d-flex align-items-center text-decoration-none text-telecom">
                     <i class="fas fa-tower-cell fa-lg me-2"></i>
                     <span class="fs-4 fw-bold">Stackly</span>
                 </a>
-                <div class="small text-white-50 mt-1">Client Portal</div>
+                <div class="small text-muted mt-1">Client Portal</div>
             </div>
 
             <nav class="flex-grow-1">
@@ -40,7 +40,7 @@
             </nav>
 
             <div class="p-4 mt-auto">
-                <a href="../../pages/login.html" class="btn btn-outline-light btn-sm w-100">
+                <a href="../../login.html" class="btn btn-outline-danger btn-sm w-100">
                     <i class="fas fa-sign-out-alt me-2"></i>Logout
                 </a>
             </div>
@@ -51,12 +51,14 @@
             <!-- Unified Dashboard Header -->
             <header class="dashboard-header">
                 <div class="d-flex align-items-center">
-                    <button class="header-icon-btn sidebar-toggler me-3"
-                        onclick="document.body.classList.toggle('sidebar-collapsed')">
+                    <button class="header-icon-btn sidebar-toggler me-3">
                         <i class="fas fa-bars"></i>
                     </button>
                 </div>
                 <div class="dashboard-header-right">
+                    <button class="header-icon-btn" id="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
                     <button class="header-icon-btn position-relative">
                         <i class="far fa-bell"></i>
                         <span

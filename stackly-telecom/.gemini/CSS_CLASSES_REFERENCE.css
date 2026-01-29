@@ -1,0 +1,406 @@
+/* =============================================================================
+   DARK MODE CSS CLASSES REFERENCE GUIDE
+   Quick reference for all dark mode classes and their usage
+   ============================================================================= */
+
+/* -----------------------------------------------------------------------------
+   1. COLOR VARIABLES (Available in both themes)
+   ----------------------------------------------------------------------------- */
+:root {
+    /* Light Mode (Default) */
+    --bg-body: #ffffff;
+    --bg-surface: #f8fafc;
+    --bg-card: #ffffff;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+}
+
+[data-theme="dark"] {
+    /* Dark Mode */
+    --bg-body: #0a0e27;
+    --bg-surface: #0f1629;
+    --bg-card: #1a1f3a;
+    --text-main: #e2e8f0;
+    --text-muted: #94a3b8;
+    --border-color: #1e293b;
+}
+
+/* -----------------------------------------------------------------------------
+   2. LAYOUT COMPONENTS
+   ----------------------------------------------------------------------------- */
+
+/* Sidebar - Dark gradient background in dark mode */
+.sidebar {}
+
+[data-theme="dark"] .sidebar {
+    background: linear-gradient(180deg, #0f1629 0%, #0a0e27 100%);
+}
+
+/* Dashboard Header - Matches sidebar color */
+.dashboard-header {}
+
+[data-theme="dark"] .dashboard-header {
+    background-color: #0f1629;
+}
+
+/* Main Content Area */
+.main-content {}
+
+[data-theme="dark"] .main-content {
+    background-color: #0a0e27;
+}
+
+/* -----------------------------------------------------------------------------
+   3. CARD COMPONENTS
+   ----------------------------------------------------------------------------- */
+
+/* Dashboard Cards - Primary content containers */
+.dashboard-card {}
+
+[data-theme="dark"] .dashboard-card {
+    background-color: #1a1f3a;
+    border-color: #1e293b;
+}
+
+/* KPI Cards - Statistics display */
+.kpi-card {}
+
+.kpi-label {}
+
+/* Uppercase labels */
+.kpi-value {}
+
+/* Large numbers */
+
+/* -----------------------------------------------------------------------------
+   4. NAVIGATION
+   ----------------------------------------------------------------------------- */
+
+/* Sidebar Links */
+.sidebar-link {}
+
+.sidebar-link.active {}
+
+/* Active page indicator */
+[data-theme="dark"] .sidebar-link:hover {
+    background: rgba(13, 110, 253, 0.15);
+}
+
+/* Header Buttons */
+.header-icon-btn {}
+
+/* Notification, theme toggle, etc. */
+[data-theme="dark"] .header-icon-btn {
+    background: rgba(226, 232, 240, 0.1);
+}
+
+/* Theme Toggle Button */
+#theme-toggle {}
+
+/* Special styling with rotation */
+
+/* -----------------------------------------------------------------------------
+   5. TABLES
+   ----------------------------------------------------------------------------- */
+
+/* Dashboard Tables */
+.dashboard-table {}
+
+.dashboard-table thead th {}
+
+/* Column headers */
+.dashboard-table tbody td {}
+
+/* Data cells */
+[data-theme="dark"] .dashboard-table tbody tr:hover {
+    background-color: rgba(226, 232, 240, 0.05);
+}
+
+/* -----------------------------------------------------------------------------
+   6. FORMS
+   ----------------------------------------------------------------------------- */
+
+/* Form Controls */
+.form-control {}
+
+/* Text inputs */
+.form-select {}
+
+/* Dropdowns */
+[data-theme="dark"] .form-control {
+    background-color: #0f1629;
+    border-color: #1e293b;
+    color: #e2e8f0;
+}
+
+/* Form Labels */
+.form-label {}
+
+[data-theme="dark"] .form-label {
+    color: #e2e8f0;
+}
+
+/* Input Groups */
+.input-group-text {}
+
+[data-theme="dark"] .input-group-text {
+    background-color: #0f1629;
+}
+
+/* -----------------------------------------------------------------------------
+   7. BUTTONS
+   ----------------------------------------------------------------------------- */
+
+/* Primary Button - Uses Bootstrap default */
+.btn-primary {}
+
+/* Outline Buttons */
+.btn-outline-secondary {}
+
+[data-theme="dark"] .btn-outline-secondary {
+    color: #e2e8f0;
+    border-color: #1e293b;
+}
+
+.btn-outline-light {}
+
+[data-theme="dark"] .btn-outline-light {
+    border-color: rgba(226, 232, 240, 0.3);
+}
+
+/* -----------------------------------------------------------------------------
+   8. BADGES
+   ----------------------------------------------------------------------------- */
+
+/* Status Badges - Enhanced colors for dark mode */
+.badge {}
+
+/* Success Badge */
+.bg-success-subtle {}
+
+[data-theme="dark"] .bg-success-subtle {
+    background-color: rgba(25, 135, 84, 0.2) !important;
+}
+
+[data-theme="dark"] .text-success {
+    color: #4ade80 !important;
+}
+
+/* Primary Badge */
+.bg-primary-subtle {}
+
+[data-theme="dark"] .bg-primary-subtle {
+    background-color: rgba(13, 110, 253, 0.2) !important;
+}
+
+[data-theme="dark"] .text-primary {
+    color: #60a5fa !important;
+}
+
+/* Warning Badge */
+.bg-warning-subtle {}
+
+[data-theme="dark"] .bg-warning-subtle {
+    background-color: rgba(245, 158, 11, 0.2) !important;
+}
+
+[data-theme="dark"] .text-warning {
+    color: #fbbf24 !important;
+}
+
+/* Danger Badge */
+.bg-danger-subtle {}
+
+[data-theme="dark"] .bg-danger-subtle {
+    background-color: rgba(220, 38, 38, 0.2) !important;
+}
+
+[data-theme="dark"] .text-danger {
+    color: #f87171 !important;
+}
+
+/* Info Badge */
+.bg-info-subtle {}
+
+[data-theme="dark"] .bg-info-subtle {
+    background-color: rgba(14, 165, 233, 0.2) !important;
+}
+
+[data-theme="dark"] .text-info {
+    color: #38bdf8 !important;
+}
+
+/* -----------------------------------------------------------------------------
+   9. LIST GROUPS
+   ----------------------------------------------------------------------------- */
+
+.list-group-item {}
+
+[data-theme="dark"] .list-group-item {
+    background-color: transparent;
+    border-color: #1e293b;
+}
+
+/* -----------------------------------------------------------------------------
+   10. DROPDOWNS & MODALS
+   ----------------------------------------------------------------------------- */
+
+/* Dropdown Menus */
+.dropdown-menu {}
+
+[data-theme="dark"] .dropdown-menu {
+    background-color: #1a1f3a;
+    border-color: #1e293b;
+}
+
+.dropdown-item {}
+
+[data-theme="dark"] .dropdown-item:hover {
+    background-color: #0f1629;
+}
+
+/* Modals */
+.modal-content {}
+
+[data-theme="dark"] .modal-content {
+    background-color: #1a1f3a;
+}
+
+/* -----------------------------------------------------------------------------
+   11. UTILITY CLASSES
+   ----------------------------------------------------------------------------- */
+
+/* Bootstrap Utilities - Overridden for dark mode */
+.bg-light {}
+
+[data-theme="dark"] .bg-light {
+    background-color: #0f1629 !important;
+}
+
+.bg-white {}
+
+[data-theme="dark"] .bg-white {
+    background-color: #1a1f3a !important;
+}
+
+.text-dark {}
+
+[data-theme="dark"] .text-dark {
+    color: #e2e8f0 !important;
+}
+
+.text-muted {}
+
+[data-theme="dark"] .text-muted {
+    color: #94a3b8 !important;
+}
+
+.border {}
+
+[data-theme="dark"] .border {
+    border-color: #1e293b !important;
+}
+
+/* -----------------------------------------------------------------------------
+   12. SPECIAL COMPONENTS
+   ----------------------------------------------------------------------------- */
+
+/* User Profile Chip */
+.user-profile-chip {}
+
+.user-avatar-sm {}
+
+/* 32x32 avatar */
+.user-name-text {}
+
+/* User name */
+.user-role-text {}
+
+/* User role */
+
+/* Chart Placeholder */
+.chart-placeholder {}
+
+[data-theme="dark"] .chart-placeholder {
+    background: #0f1629;
+    border-color: #1e293b;
+}
+
+/* Progress Bars */
+.progress {}
+
+[data-theme="dark"] .progress {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Avatar Groups */
+.avatar-group img {}
+
+.avatar-group img:hover {
+    transform: scale(1.1);
+}
+
+/* -----------------------------------------------------------------------------
+   13. TRANSITIONS & ANIMATIONS
+   ----------------------------------------------------------------------------- */
+
+/* All theme-aware components have smooth transitions */
+[data-theme="dark"] * {
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+/* Theme toggle button animation */
+#theme-toggle i {
+    transition: transform 0.3s ease, opacity 0.15s ease;
+}
+
+/* Card hover effect */
+.dashboard-card::before {
+    /* Gradient top border on hover */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--info-color));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.dashboard-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* -----------------------------------------------------------------------------
+   USAGE EXAMPLES
+   ----------------------------------------------------------------------------- */
+
+/*
+Example 1: Creating a new card
+<div class="dashboard-card p-4">
+    <h5>Card Title</h5>
+    <p class="text-muted">Card content</p>
+</div>
+
+Example 2: Status badge
+<span class="badge bg-success-subtle text-success">Active</span>
+
+Example 3: Form input
+<input type="text" class="form-control" placeholder="Enter text">
+
+Example 4: Data table
+<table class="table dashboard-table">
+    <thead>
+        <tr><th>Column</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Data</td></tr>
+    </tbody>
+</table>
+
+Example 5: Button group
+<button class="btn btn-primary">Primary</button>
+<button class="btn btn-outline-secondary">Secondary</button>
+*/

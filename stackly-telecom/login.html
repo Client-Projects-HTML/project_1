@@ -7,12 +7,26 @@
     <title>Login - Stackly Telecom</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/dark.css">
-    <link rel="stylesheet" href="../assets/css/rtl.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
 </head>
 
-<body class="bg-light">
+<body class="login-page" data-theme="light">
+
+    <!-- Home Icon -->
+    <div class="position-absolute top-0 start-0 p-4">
+        <a href="index.html" class="btn btn-link text-muted p-0" aria-label="Go to Home" style="opacity: 0.8;">
+            <i class="fas fa-home fa-lg"></i>
+        </a>
+    </div>
+
+    <!-- Theme Toggle -->
+    <div class="position-absolute top-0 end-0 p-4">
+        <button class="btn btn-link text-body p-0" id="theme-toggle" aria-label="Toggle Dark Mode">
+            <i class="fas fa-moon fa-lg"></i>
+        </button>
+    </div>
 
     <div class="container d-flex flex-column min-vh-100 justify-content-center align-items-center py-5">
         <div class="card border-0 shadow p-4 p-md-5" style="max-width: 450px; width: 100%;">
@@ -66,19 +80,17 @@
             </div>
             <div class="text-center mt-4">
                 <small class="text-muted d-block mb-2">Demo Links:</small>
-                <a href="../dashboard/admin/index.html" class="badge bg-secondary text-decoration-none me-2">Admin
+                <a href="dashboard/admin/index.html" class="badge bg-secondary text-decoration-none me-2">Admin
                     Demo</a>
-                <a href="../dashboard/client/index.html" class="badge bg-secondary text-decoration-none">Client Demo</a>
+                <a href="dashboard/client/index.html" class="badge bg-secondary text-decoration-none">Client Demo</a>
             </div>
-        </div>
-        <div class="mt-4 text-muted small">
-            &copy; 2026 Abhivorn Technologies Pvt Ltd
         </div>
     </div>
 
+
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/js/main.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>

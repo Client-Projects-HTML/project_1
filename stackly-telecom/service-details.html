@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Details - Stackly Telecom</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+
+<body data-theme="light">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3 text-telecom" href="index.html"><i
+                    class="fas fa-tower-cell me-2"></i>Stackly</a>
+            <div class="d-flex align-items-center ms-auto order-lg-3">
+                <button class="btn btn-link text-body p-0 ms-lg-4" id="language-toggle" aria-label="Switch Language">
+                    <i class="fas fa-language"></i>
+                </button>
+                <button class="btn btn-link text-body p-0 ms-3" id="theme-toggle" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+            </div>
+            <div class="collapse navbar-collapse order-lg-2" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="d-flex align-items-center ms-lg-4">
+                    <a href="login.html" class="btn btn-outline-primary btn-sm">Client Portal</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+
+
+    <!-- Content -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <img src="assets/images/technician-work.png" alt="Service Image" id="service-image"
+                        class="img-fluid rounded mb-4 w-75 d-block mx-auto" style="object-fit: cover;">
+
+                    <h3 class="fw-bold mb-3" id="service-title">Service Overview</h3>
+                    <p class="text-muted mb-4" id="service-description">Our fiber optic division provides comprehensive
+                        services ranging from
+                        initial route planning and engineering to physical installation, splicing, and testing. We
+                        utilize state-of-the-art fusion Splicers and OTDR testing equipment to ensure minimal loss and
+                        maximum throughput.</p>
+
+                    <h4 class="fw-bold mb-3">Key Capabilities</h4>
+                    <ul class="list-unstyled mb-5" id="service-capabilities">
+                        <li class="mb-2"><i class="fas fa-check-circle text-telecom me-2"></i> Ribbon and single fiber
+                            fusion splicing</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-telecom me-2"></i> OTDR and Power Meter
+                            testing</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-telecom me-2"></i> Emergency restoration
+                            services</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-telecom me-2"></i> MDU/SFU FTTH
+                            installations</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-telecom me-2"></i> Aerial and underground
+                            construction</li>
+                    </ul>
+
+                    <h4 class="fw-bold mb-3">Service Pricing Packages</h4>
+                    <div class="table-responsive mb-5">
+                        <table class="table table-bordered align-middle">
+                            <thead class="bg-light">
+                                <tr>
+                                    <th>Package</th>
+                                    <th>Features</th>
+                                    <th>Starting Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="fw-bold">Basic Deployment</td>
+                                    <td>Single node setup, standard testing, 1yr warranty.</td>
+                                    <td class="text-primary fw-bold">$1,200</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">Enterprise Hub</td>
+                                    <td>Multi-point mesh, 24/7 monitoring, redundant links.</td>
+                                    <td class="text-primary fw-bold">$4,500</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">Custom Infrastructure</td>
+                                    <td>Dedicated OSP works, private fiber backbone, full SLA.</td>
+                                    <td class="text-primary fw-bold">Custom Quote</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h4 class="fw-bold mb-3">Frequently Asked Questions</h4>
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item border shadow-sm mb-3 rounded-3 overflow-hidden">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne">
+                                    What is your typical mobilization time?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    For standard projects, we can mobilize within 1-2 weeks. For emergency restorations,
+                                    we have crews available 24/7/365 with a 4-hour response time in our primary coverage
+                                    areas.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border shadow-sm mb-3 rounded-3 overflow-hidden">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-bold" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                    Do you handle municipal permitting?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    Yes, our in-house engineering department handles all right-of-way permitting, pole
+                                    attachment applications, and municipal approvals. We act as your liaison with local
+                                    authorities.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border shadow-sm mb-3 rounded-3 overflow-hidden">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-bold" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                    What equipment brands do you work with?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    We are vendor-neutral and certified to install equipment from industry leaders like
+                                    Cisco, Nokia, Ericsson, Corning, and CommScope.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card p-4 border-0 shadow-sm mb-4">
+                        <h4 class="fw-bold mb-3">Request a Quote</h4>
+                        <form>
+                            <div class="mb-3">
+                                <label class="form-label small text-muted">Name</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label small text-muted">Email</label>
+                                <input type="email" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label small text-muted">Project Type</label>
+                                <select class="form-select">
+                                    <option>Fiber Optics</option>
+                                    <option>Wireless/5G</option>
+                                    <option>Maintenance</option>
+                                </select>
+                            </div>
+                            <button class="btn btn-telecom w-100 fw-bold">Submit Request</button>
+                        </form>
+                    </div>
+
+                    <div class="card p-4 border-0 shadow-sm bg-telecom text-white">
+                        <h4 class="fw-bold mb-3">Need Emergency Help?</h4>
+                        <p class="small opacity-75 mb-3">Our Network Operations Center is available 24/7 for critical
+                            infrastructure repairs.</p>
+                        <h3 class="fw-bold"><i class="fas fa-phone me-2"></i> 800-555-0199</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="pt-5 pb-3">
+        <div class="container position-relative z-1">
+            <div class="row g-5 mb-5">
+                <!-- Col 1: Brand & Social -->
+                <div class="col-lg-4">
+                    <a href="index.html" class="navbar-brand fw-bold fs-3 text-white mb-3 d-block">
+                        <i class="fas fa-tower-cell me-2"></i>Stackly
+                    </a>
+                    <p class="text-white-50 mb-4">Leading the way in digital infrastructure. We build the networks that
+                        connect the world, from fiber optics to 5G deployment.</p>
+                    <div class="d-flex gap-2">
+                        <a href="#" class="social-icon-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon-btn" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Company Links -->
+                <div class="col-lg-2 col-6">
+                    <h5 class="fw-bold text-white mb-4">Company</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="about.html" class="text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="services.html" class="text-decoration-none">Services</a></li>
+                        <li class="mb-2"><a href="projects.html" class="text-decoration-none">Projects</a></li>
+                        <li class="mb-2"><a href="blog.html" class="text-decoration-none">Blog</a></li>
+                        <li class="mb-2"><a href="careers.html" class="text-decoration-none">Careers</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Support Links -->
+                <div class="col-lg-2 col-6">
+                    <h5 class="fw-bold text-white mb-4">Support</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-decoration-none">Help Center</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none">Documentation</a></li>
+                        <li class="mb-2"><a href="privacy.html" class="text-decoration-none">Privacy Policy</a></li>
+                        <li class="mb-2"><a href="terms.html" class="text-decoration-none">Terms of Service</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-decoration-none">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact & Newsletter -->
+                <div class="col-lg-4">
+                    <h5 class="fw-bold text-white mb-4">Contact Info</h5>
+                    <ul class="list-unstyled text-white-50 mb-4">
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2 text-primary"></i> 1234 Telecom Blvd, Tech
+                            City, TC 90210</li>
+                        <li class="mb-2"><i class="fas fa-phone me-2 text-primary"></i> (800) 555-0199</li>
+                        <li class="mb-2"><i class="fas fa-envelope me-2 text-primary"></i> hello@stackly.com</li>
+                    </ul>
+                    <h6 class="fw-bold text-white mb-3">Subscribe to our newsletter</h6>
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Enter your email" aria-label="Email">
+                        <button class="btn btn-primary" type="button"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-secondary opacity-25">
+
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center py-3">
+                <div class="text-white-50 small mb-3 mb-md-0">
+                    &copy; 2026 Abhivorn Technologies Pvt Ltd. All Rights Reserved.
+                </div>
+                <div class="d-flex gap-3 text-white-50">
+                    <i class="fab fa-cc-visa fa-lg" aria-label="Visa"></i>
+                    <i class="fab fa-cc-mastercard fa-lg" aria-label="Mastercard"></i>
+                    <i class="fab fa-cc-paypal fa-lg" aria-label="PayPal"></i>
+                    <i class="fab fa-cc-stripe fa-lg" aria-label="Stripe"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const serviceType = params.get('service') || 'fiber'; // Default to fiber
+
+            const services = {
+                'fiber': {
+                    title: 'Fiber Optic Deployment',
+                    description: 'Our fiber optic division provides comprehensive services ranging from initial route planning and engineering to physical installation, splicing, and testing. We utilize state-of-the-art fusion Splicers and OTDR testing equipment to ensure minimal loss and maximum throughput.',
+                    image: 'assets/images/technician-work.png',
+                    capabilities: [
+                        'Ribbon and single fiber fusion splicing',
+                        'OTDR and Power Meter testing',
+                        'Emergency restoration services',
+                        'MDU/SFU FTTH installations',
+                        'Aerial and underground construction'
+                    ]
+                },
+                'wireless': {
+                    title: 'Wireless & 5G Solutions',
+                    description: 'Our wireless division specializes in next-gen 5G infrastructure. From small cell deployment to macro tower stacking, we ensure seamless connectivity for carriers and enterprises. We handle the entire lifecycle from site acquisition to on-air integration.',
+                    image: 'assets/images/5g-tower.png',
+                    capabilities: [
+                        '5G Small Cell Installation',
+                        'Macro Tower Upgrades & Modifications',
+                        'DAS (Distributed Antenna Systems)',
+                        'PIM & Sweep Testing',
+                        'Microwave Backhaul Links'
+                    ]
+                },
+                'maintenance': {
+                    title: 'Maintenance & Repair',
+                    description: 'Stackly provides round-the-clock maintenance to keep your network up and running. We handle storm repairs, routine audits, and hardware replacements with guaranteed response times. Our 24/7 NOC allows us to dispatch crews immediately when outages occur.',
+                    image: 'assets/images/services-emergency.png',
+                    capabilities: [
+                        '24/7 Emergency Dispatch',
+                        'Preventative Maintenance Programs',
+                        'Site Audits & Safety Inspections',
+                        'Hardware Replacement & RMA',
+                        'Battery & Power Systems Check'
+                    ]
+                },
+                'cabling': {
+                    title: 'Structured Cabling Services',
+                    description: 'Professional installation of copper and fiber optic cabling systems for commercial offices, data centers, and industrial facilities. We ensure certified performance for Cat5e, Cat6, Cat6a, and backbone fiber, providing the solid physical layer your network relies on.',
+                    image: 'assets/images/network-cabling.png',
+                    capabilities: [
+                        'Cat6/6a Copper Installation',
+                        'Fiber Backbone Cabling (OM3/OM4/OS2)',
+                        'Data Center Rack & Stack',
+                        'Cable Certification & Fluke Testing',
+                        'Cable Management & Cleanup'
+                    ]
+                },
+                'civil-works': {
+                    title: 'OSP Civil Infrastructure',
+                    description: 'Heavy civil construction services for outside plant telecommunications. We specialize in underground pathway creation including horizontal directional drilling (HDD), trenching, and conduit placement. Our crews are engaged in safe digging practices and complete surface restoration.',
+                    image: 'assets/images/services-civil-works.png',
+                    capabilities: [
+                        'Horizontal Directional Drilling (HDD)',
+                        'Open Trenching & Excavation',
+                        'Conduit, Handhole & Manhole Installation',
+                        'Concrete & Asphalt Restoration',
+                        'Right-of-Way (ROW) Permitting'
+                    ]
+                }
+            };
+
+            const data = services[serviceType] || services['fiber'];
+
+            // Update DOM
+            document.getElementById('service-title').textContent = data.title;
+            document.getElementById('service-description').textContent = data.description;
+            document.getElementById('service-image').src = data.image;
+            document.getElementById('service-image').alt = data.title;
+
+            const capabilitiesList = document.getElementById('service-capabilities');
+            if (capabilitiesList) {
+                capabilitiesList.innerHTML = data.capabilities.map(cap =>
+                    `<li class="mb-2"><i class="fas fa-check-circle text-telecom me-2"></i> ${cap}</li>`
+                ).join('');
+            }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
