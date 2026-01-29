@@ -834,3 +834,18 @@ body.page-transitioning {
         margin-bottom: 1.5rem;
     }
 }
+/* Payment Icons Hover Colors */
+.payment-icon {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.payment-icon:hover {
+    transform: translateY(-3px);
+    opacity: 1 !important;
+}
+
+.payment-icon.fa-cc-visa:hover { color: #f9f9f9; } /* White for Visa on Dark Background */
+.payment-icon.fa-cc-mastercard:hover { color: #eb001b; } /* Mastercard Red */
+.payment-icon.fa-cc-paypal:hover { color: #00457C; } /* Paypal Blue */
+.payment-icon.fa-cc-stripe:hover { color: #6772e5; } /* Stripe Blurple */
