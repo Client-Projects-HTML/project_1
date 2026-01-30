@@ -94,6 +94,7 @@ function initLanguage() {
 
 function setLanguage(lang) {
     document.body.setAttribute('dir', lang);
+    document.documentElement.setAttribute('lang', lang === 'rtl' ? 'ar' : 'en');
     localStorage.setItem('language', lang);
 }
 
@@ -101,13 +102,13 @@ function updateLanguageIcon(lang) {
     const langToggle = document.getElementById('language-toggle');
     if (!langToggle) return;
 
-    const icon = langToggle.querySelector('i');
+    // const icon = langToggle.querySelector('i'); // Icon stays as fa-language (letters)
 
     if (lang === 'rtl') {
-        if (icon) icon.className = 'fas fa-globe';
+        // if (icon) icon.className = 'fas fa-globe';
         langToggle.setAttribute('aria-label', 'Switch to English');
     } else {
-        if (icon) icon.className = 'fas fa-language';
+        // if (icon) icon.className = 'fas fa-language';
         langToggle.setAttribute('aria-label', 'Switch to Arabic (RTL)');
     }
 }

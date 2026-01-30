@@ -1,43 +1,28 @@
-/* RTL Support */
+/* RTL Support - Reversed Text (eomH style) */
 [dir="rtl"] body {
     text-align: right;
     direction: rtl;
+    unicode-bidi: bidi-override;
 }
 
-[dir="rtl"] .ms-auto {
-    margin-right: auto !important;
-    margin-left: 0 !important;
+/* Ensure text is clearly visible and aligned */
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6,
+[dir="rtl"] p,
+[dir="rtl"] span,
+[dir="rtl"] a,
+[dir="rtl"] li,
+[dir="rtl"] label {
+    text-align: right;
+    unicode-bidi: bidi-override;
 }
 
-[dir="rtl"] .me-auto {
-    margin-left: auto !important;
-    margin-right: 0 !important;
-}
-
-[dir="rtl"] .ps-0 {
-    padding-right: 0 !important;
-}
-
-[dir="rtl"] .pe-0 {
-    padding-left: 0 !important;
-}
-
-/* RTL Footer */
-[dir="rtl"] footer::before {
-    background: radial-gradient(circle at top left, rgba(13, 110, 253, 0.1), transparent 40%);
-}
-
-[dir="rtl"] footer a:hover {
-    padding-left: 0;
-    padding-right: 4px;
-}
-
-[dir="rtl"] .social-icon-btn {
-    transform: scaleX(-1);
-    /* If icons are directional, otherwise unrelated */
-}
-
-/* Reset social icon hover for RTL */
-[dir="rtl"] .social-icon-btn:hover {
-    padding-right: 0;
+/* Fix fixed elements that might have been broken by previous transform */
+[dir="rtl"] .fixed-top {
+    position: fixed !important;
+    width: 100%;
 }
