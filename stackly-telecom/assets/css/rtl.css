@@ -5,7 +5,7 @@
     unicode-bidi: bidi-override;
 }
 
-/* Ensure text is clearly visible and aligned */
+/* Ensure text is clearly visible, aligned, and reversed for form elements too */
 [dir="rtl"] h1,
 [dir="rtl"] h2,
 [dir="rtl"] h3,
@@ -16,7 +16,12 @@
 [dir="rtl"] span,
 [dir="rtl"] a,
 [dir="rtl"] li,
-[dir="rtl"] label {
+[dir="rtl"] label,
+[dir="rtl"] button,
+[dir="rtl"] .btn,
+[dir="rtl"] select,
+[dir="rtl"] option,
+[dir="rtl"] input {
     text-align: right;
     unicode-bidi: bidi-override;
 }
