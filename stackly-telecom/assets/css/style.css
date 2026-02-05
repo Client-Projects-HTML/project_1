@@ -904,3 +904,11 @@ body.page-transitioning {
 }
 
 /* Stripe Blurple */
+
+.footer-brand-link {
+    transition: color 0.3s ease;
+}
+
+.footer-brand-link:hover {
+    color: var(--primary-color) !important;
+}
