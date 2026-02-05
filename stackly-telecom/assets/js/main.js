@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initDemoAuth();
     // initPageTransitions(); // Disabled per user request
     initProjectFilters();
+    initBlogPagination();
 });
 
 /* -------------------------------------------------------------------------- */
@@ -363,3 +364,63 @@ function initProjectFilters() {
     }
 }
 
+/* -------------------------------------------------------------------------- */
+/*                            Blog Pagination                                 */
+/* -------------------------------------------------------------------------- */
+function initBlogPagination() {
+    const pagination = document.getElementById('blog-pagination');
+    if (!pagination) return;
+
+    const items = document.querySelectorAll('.blog-post-item');
+    const pageLinks = pagination.querySelectorAll('.page-link');
+    let currentPage = 1;
+    const totalPages = 2; // Fixed for now based on added content
+
+    function showPage(page) {
+        if (page < 1 || page > totalPages) return;
+        currentPage = parseInt(page);
+
+        // Update posts
+        items.forEach(item => {
+            if (parseInt(item.getAttribute('data-page')) === currentPage) {
+                item.classList.remove('d-none');
+                item.style.animation = 'fadeIn 0.3s ease-in';
+            } else {
+                item.classList.add('d-none');
+            }
+        });
+
+        // Update pagination UI
+        const pageItems = pagination.querySelectorAll('.page-item');
+        pageItems.forEach(item => {
+            item.classList.remove('active');
+            item.classList.remove('disabled');
+        });
+
+        document.getElementById(`page-${currentPage}`).classList.add('active');
+        
+        if (currentPage === 1) {
+            document.getElementById('pagination-prev').classList.add('disabled');
+        } else if (currentPage === totalPages) {
+            document.getElementById('pagination-next').classList.add('disabled');
+        }
+
+        // Scroll to top of posts
+        window.scrollTo({ top: document.querySelector('.section-padding').offsetTop - 100, behavior: 'smooth' });
+    }
+
+    pageLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const page = link.getAttribute('data-page');
+            
+            if (page === 'prev') {
+                showPage(currentPage - 1);
+            } else if (page === 'next') {
+                showPage(currentPage + 1);
+            } else {
+                showPage(page);
+            }
+        });
+    });
+}

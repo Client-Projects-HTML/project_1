@@ -57,7 +57,8 @@
             <div class="row">
                 <div class="col-lg-8">
                     <img src="assets/images/technician-work.png" alt="Service Image" id="service-image"
-                        class="img-fluid rounded mb-4 w-75 d-block mx-auto" style="object-fit: cover;">
+                        class="img-fluid rounded mb-5 w-100 d-block mx-auto"
+                        style="object-fit: cover; max-height: 450px;">
 
                     <h3 class="fw-bold mb-3" id="service-title">Service Overview</h3>
                     <p class="text-muted mb-4" id="service-description">Our fiber optic division provides comprehensive
@@ -80,7 +81,7 @@
                             construction</li>
                     </ul>
 
-                    <h4 class="fw-bold mb-3">Service Pricing Packages</h4>
+                    <h4 class="fw-bold mb-4">Service Pricing Packages</h4>
                     <div class="table-responsive mb-5">
                         <table class="table table-bordered align-middle">
                             <thead class="bg-light">
@@ -90,73 +91,15 @@
                                     <th>Starting Price</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="fw-bold">Basic Deployment</td>
-                                    <td>Single node setup, standard testing, 1yr warranty.</td>
-                                    <td class="text-primary fw-bold">$1,200</td>
-                                </tr>
-                                <tr>
-                                    <td class="fw-bold">Enterprise Hub</td>
-                                    <td>Multi-point mesh, 24/7 monitoring, redundant links.</td>
-                                    <td class="text-primary fw-bold">$4,500</td>
-                                </tr>
-                                <tr>
-                                    <td class="fw-bold">Custom Infrastructure</td>
-                                    <td>Dedicated OSP works, private fiber backbone, full SLA.</td>
-                                    <td class="text-primary fw-bold">Custom Quote</td>
-                                </tr>
+                            <tbody id="pricing-body">
+                                <!-- Dynamic Content -->
                             </tbody>
                         </table>
                     </div>
 
-                    <h4 class="fw-bold mb-3">Frequently Asked Questions</h4>
+                    <h4 class="fw-bold mb-4">Frequently Asked Questions</h4>
                     <div class="accordion" id="faqAccordion">
-                        <div class="accordion-item border shadow-sm mb-3 rounded-3 overflow-hidden">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseOne">
-                                    What is your typical mobilization time?
-                                </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show"
-                                data-bs-parent="#faqAccordion">
-                                <div class="accordion-body text-muted">
-                                    For standard projects, we can mobilize within 1-2 weeks. For emergency restorations,
-                                    we have crews available 24/7/365 with a 4-hour response time in our primary coverage
-                                    areas.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item border shadow-sm mb-3 rounded-3 overflow-hidden">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed fw-bold" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-                                    Do you handle municipal permitting?
-                                </button>
-                            </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body text-muted">
-                                    Yes, our in-house engineering department handles all right-of-way permitting, pole
-                                    attachment applications, and municipal approvals. We act as your liaison with local
-                                    authorities.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item border shadow-sm mb-3 rounded-3 overflow-hidden">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed fw-bold" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#collapseThree">
-                                    What equipment brands do you work with?
-                                </button>
-                            </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body text-muted">
-                                    We are vendor-neutral and certified to install equipment from industry leaders like
-                                    Cisco, Nokia, Ericsson, Corning, and CommScope.
-                                </div>
-                            </div>
-                        </div>
+                        <!-- Dynamic Content -->
                     </div>
                 </div>
 
@@ -222,7 +165,7 @@
                         <li class="mb-2"><a href="services.html" class="text-decoration-none">Services</a></li>
                         <li class="mb-2"><a href="projects.html" class="text-decoration-none">Projects</a></li>
                         <li class="mb-2"><a href="blog.html" class="text-decoration-none">Blog</a></li>
-                        <li class="mb-2"><a href="careers.html" class="text-decoration-none">Careers</a></li>
+                        <li class="mb-2"><a href="coming-soon.html" class="text-decoration-none">Careers</a></li>
                     </ul>
                 </div>
 
@@ -232,8 +175,8 @@
                     <ul class="list-unstyled">
                         <li class="mb-2"><a href="#" class="text-decoration-none">Help Center</a></li>
                         <li class="mb-2"><a href="#" class="text-decoration-none">Documentation</a></li>
-                        <li class="mb-2"><a href="privacy.html" class="text-decoration-none">Privacy Policy</a></li>
-                        <li class="mb-2"><a href="terms.html" class="text-decoration-none">Terms of Service</a></li>
+                        <li class="mb-2"><a href="coming-soon.html" class="text-decoration-none">Terms of Service</a>
+                        </li>
                         <li class="mb-2"><a href="contact.html" class="text-decoration-none">Contact Us</a></li>
                     </ul>
                 </div>
@@ -287,6 +230,15 @@
                         'Emergency restoration services',
                         'MDU/SFU FTTH installations',
                         'Aerial and underground construction'
+                    ],
+                    pricing: [
+                        { pkg: 'Basic Deployment', feat: 'Single node setup, standard testing, 1yr warranty.', price: '$1,200' },
+                        { pkg: 'Enterprise Hub', feat: 'Multi-point mesh, 24/7 monitoring, redundant links.', price: '$4,500' },
+                        { pkg: 'Custom Infrastructure', feat: 'Dedicated OSP works, private fiber backbone, full SLA.', price: 'Custom Quote' }
+                    ],
+                    faqs: [
+                        { q: 'What is your typical mobilization time?', a: 'For standard projects, we can mobilize within 1-2 weeks. For emergency restorations, we have crews available 24/7/365.' },
+                        { q: 'Do you handle municipal permitting?', a: 'Yes, our in-house engineering department handles all right-of-way permitting and municipal approvals.' }
                     ]
                 },
                 'wireless': {
@@ -299,6 +251,15 @@
                         'DAS (Distributed Antenna Systems)',
                         'PIM & Sweep Testing',
                         'Microwave Backhaul Links'
+                    ],
+                    pricing: [
+                        { pkg: 'Site Survey & Planning', feat: 'Initial RF audit, site acquisition path, structural prep.', price: '$2,500' },
+                        { pkg: '5G Macro Deployment', feat: 'Tower stacking, carrier integration, fiber backhaul, testing.', price: '$15,000' },
+                        { pkg: 'Private LTE/5G Network', feat: 'Full campus coverage, edge computing, secure core integration.', price: 'Custom Quote' }
+                    ],
+                    faqs: [
+                        { q: 'What frequencies do you support?', a: 'We handle all major bands including Sub-6GHz (n78/n77), mmWave, and private CBRS bands for industrial applications.' },
+                        { q: 'Do you provide PIM and Sweep testing?', a: 'Yes, every wireless installation includes comprehensive PIM testing and line sweeps with certified reports.' }
                     ]
                 },
                 'maintenance': {
@@ -311,6 +272,13 @@
                         'Site Audits & Safety Inspections',
                         'Hardware Replacement & RMA',
                         'Battery & Power Systems Check'
+                    ],
+                    pricing: [
+                        { pkg: 'Monthly Audit', feat: 'On-site check, hardware health report, firmware updates.', price: '$500/mo' },
+                        { pkg: 'On-Call Retainer', feat: 'Guaranteed 4hr response, prioritized storm recovery.', price: '$2,000/mo' }
+                    ],
+                    faqs: [
+                        { q: 'What is your guaranteed response time?', a: 'We offer a 4-hour response time for critical infrastructure outages within our primary coverage zones.' }
                     ]
                 },
                 'cabling': {
@@ -321,8 +289,14 @@
                         'Cat6/6a Copper Installation',
                         'Fiber Backbone Cabling (OM3/OM4/OS2)',
                         'Data Center Rack & Stack',
-                        'Cable Certification & Fluke Testing',
                         'Cable Management & Cleanup'
+                    ],
+                    pricing: [
+                        { pkg: 'Per-Drop Cabling', feat: 'Cat6 installation, termination, testing, and labeling.', price: '$150/drop' },
+                        { pkg: 'Full Data Center Fit-out', feat: 'Rack installation, overhead tray, fiber backbone.', price: 'Custom Quote' }
+                    ],
+                    faqs: [
+                        { q: 'Do you provide cable certification?', a: 'Yes, all installations are tested using Fluke DSX-8000 testers with full certification reports provided.' }
                     ]
                 },
                 'civil-works': {
@@ -332,9 +306,14 @@
                     capabilities: [
                         'Horizontal Directional Drilling (HDD)',
                         'Open Trenching & Excavation',
-                        'Conduit, Handhole & Manhole Installation',
-                        'Concrete & Asphalt Restoration',
-                        'Right-of-Way (ROW) Permitting'
+                        'Conduit & Handhole Installation'
+                    ],
+                    pricing: [
+                        { pkg: 'Directional Drilling', feat: 'Boring, conduit placement, pulling tape included.', price: '$18/ft' },
+                        { pkg: 'Trenching Service', feat: 'Machine trenching, depth verification, backfill.', price: '$12/ft' }
+                    ],
+                    faqs: [
+                        { q: 'How do you handle utility locates?', a: 'We manage all 811 utility locate requests and use private GPR where necessary to ensure safe excavation.' }
                     ]
                 }
             };
@@ -347,11 +326,45 @@
             document.getElementById('service-image').src = data.image;
             document.getElementById('service-image').alt = data.title;
 
+            // Updated Capabilities
             const capabilitiesList = document.getElementById('service-capabilities');
             if (capabilitiesList) {
                 capabilitiesList.innerHTML = data.capabilities.map(cap =>
                     `<li class="mb-2"><i class="fas fa-check-circle text-telecom me-2"></i> ${cap}</li>`
                 ).join('');
+            }
+
+            // Updated Pricing
+            const pricingBody = document.getElementById('pricing-body');
+            if (pricingBody && data.pricing) {
+                pricingBody.innerHTML = data.pricing.map(item => `
+                    <tr>
+                        <td class="fw-bold">${item.pkg}</td>
+                        <td>${item.feat}</td>
+                        <td class="text-primary fw-bold">${item.price}</td>
+                    </tr>
+                `).join('');
+            }
+
+            // Updated FAQ
+            const faqAccordion = document.getElementById('faqAccordion');
+            if (faqAccordion && data.faqs) {
+                faqAccordion.innerHTML = data.faqs.map((faq, index) => `
+                    <div class="accordion-item border shadow-sm mb-3 rounded-3 overflow-hidden">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button ${index !== 0 ? 'collapsed' : ''} fw-bold" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse${index}">
+                                ${faq.q}
+                            </button>
+                        </h2>
+                        <div id="collapse${index}" class="accordion-collapse collapse ${index === 0 ? 'show' : ''}"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                ${faq.a}
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
             }
         });
     </script>

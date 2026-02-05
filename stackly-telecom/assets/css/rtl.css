@@ -2,7 +2,6 @@
 [dir="rtl"] body {
     text-align: right;
     direction: rtl;
-    unicode-bidi: bidi-override;
 }
 
 /* Ensure text is clearly visible, aligned, and reversed for form elements too */
@@ -23,7 +22,6 @@
 [dir="rtl"] option,
 [dir="rtl"] input {
     text-align: right;
-    unicode-bidi: bidi-override;
 }
 
 /* Fix fixed elements that might have been broken by previous transform */

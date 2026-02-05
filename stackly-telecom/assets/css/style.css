@@ -104,6 +104,44 @@ a {
     color: white;
 }
 
+/* Modern Pagination */
+.pagination {
+    gap: 0.5rem;
+}
+
+.page-link {
+    border-radius: 50px !important;
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 0.6rem 1.25rem;
+    min-width: 46px;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: var(--bg-surface);
+    font-weight: 500;
+}
+
+.page-item.active .page-link {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.25);
+}
+
+.page-link:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.page-item.disabled .page-link {
+    background-color: transparent;
+    border-color: var(--border-color);
+    opacity: 0.5;
+    color: var(--text-muted);
+}
+
 /* Cards */
 .card {
     border: none;
@@ -834,6 +872,7 @@ body.page-transitioning {
         margin-bottom: 1.5rem;
     }
 }
+
 /* Payment Icons Hover Colors */
 .payment-icon {
     transition: all 0.3s ease;
@@ -845,7 +884,23 @@ body.page-transitioning {
     opacity: 1 !important;
 }
 
-.payment-icon.fa-cc-visa:hover { color: #f9f9f9; } /* White for Visa on Dark Background */
-.payment-icon.fa-cc-mastercard:hover { color: #eb001b; } /* Mastercard Red */
-.payment-icon.fa-cc-paypal:hover { color: #00457C; } /* Paypal Blue */
-.payment-icon.fa-cc-stripe:hover { color: #6772e5; } /* Stripe Blurple */
+.payment-icon.fa-cc-visa:hover {
+    color: #f9f9f9;
+}
+
+/* White for Visa on Dark Background */
+.payment-icon.fa-cc-mastercard:hover {
+    color: #eb001b;
+}
+
+/* Mastercard Red */
+.payment-icon.fa-cc-paypal:hover {
+    color: #00457C;
+}
+
+/* Paypal Blue */
+.payment-icon.fa-cc-stripe:hover {
+    color: #6772e5;
+}
+
+/* Stripe Blurple */
