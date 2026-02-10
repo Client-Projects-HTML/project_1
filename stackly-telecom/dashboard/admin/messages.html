@@ -40,8 +40,8 @@
                 <a href="reports.html" class="sidebar-link">
                     <i class="fas fa-chart-bar"></i> <span>Reports</span>
                 </a>
-                <a href="settings.html" class="sidebar-link">
-                    <i class="fas fa-cog"></i> <span>Settings</span>
+                <a href="../../login.html" class="sidebar-link d-md-none text-danger">
+                    <i class="fas fa-sign-out-alt"></i> <span>Logout</span>
                 </a>
             </nav>
 
@@ -87,7 +87,7 @@
             <div class="container-fluid p-4">
                 <div class="row g-0 dashboard-card overflow-hidden" style="height: calc(100vh - 140px);">
                     <!-- Chat List -->
-                    <div class="col-md-4 border-end d-flex flex-column h-100">
+                    <div class="col-md-4 border-end d-flex flex-column h-100" id="chatList">
                         <div
                             class="p-3 border-bottom d-flex justify-content-between align-items-center bg-light bg-opacity-25">
                             <h6 class="fw-bold mb-0">Conversations</h6>
@@ -98,7 +98,8 @@
                         </div>
                         <div class="flex-grow-1 overflow-auto">
                             <div class="list-group list-group-flush">
-                                <a href="#" class="list-group-item list-group-item-action p-3 active border-0">
+                                <a href="#"
+                                    class="list-group-item list-group-item-action p-3 active border-0 chat-item">
                                     <div class="d-flex justify-content-between mb-1">
                                         <strong>MetroFiber Support</strong>
                                         <small>Just now</small>
@@ -106,7 +107,8 @@
                                     <div class="small opacity-75 text-truncate">We need an update on the phase 2
                                         survey...</div>
                                 </a>
-                                <a href="#" class="list-group-item list-group-item-action p-3 border-0 border-bottom">
+                                <a href="#"
+                                    class="list-group-item list-group-item-action p-3 border-0 border-bottom chat-item">
                                     <div class="d-flex justify-content-between mb-1">
                                         <strong>John Doe (Tech)</strong>
                                         <small>2h ago</small>
@@ -114,7 +116,8 @@
                                     <div class="small text-muted text-truncate">Site B materials delivered successfully.
                                     </div>
                                 </a>
-                                <a href="#" class="list-group-item list-group-item-action p-3 border-0 border-bottom">
+                                <a href="#"
+                                    class="list-group-item list-group-item-action p-3 border-0 border-bottom chat-item">
                                     <div class="d-flex justify-content-between mb-1">
                                         <strong>Jane Smith</strong>
                                         <small>Yesterday</small>
@@ -127,9 +130,12 @@
                     </div>
 
                     <!-- Chat View -->
-                    <div class="col-md-8 d-flex flex-column h-100 bg-white">
+                    <div class="col-md-8 d-flex flex-column h-100 bg-white d-none d-md-flex" id="chatView">
                         <div class="p-3 border-bottom d-flex justify-content-between align-items-center">
                             <div class="d-flex align-items-center">
+                                <button class="btn btn-link link-dark p-0 me-3 d-md-none" id="backToChatList">
+                                    <i class="fas fa-arrow-left"></i>
+                                </button>
                                 <img src="https://placehold.co/40x40/333/fff?text=M" class="rounded-circle me-3" alt="">
                                 <div>
                                     <h6 class="fw-bold mb-0">MetroFiber Support</h6>

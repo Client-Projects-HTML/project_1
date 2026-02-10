@@ -9,71 +9,379 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/rtl.css">
+    <style>
+        .coming-soon-page {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .coming-soon-page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .animated-bg-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .shape {
+            position: absolute;
+            opacity: 0.05;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .shape:nth-child(1) {
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape:nth-child(2) {
+            top: 60%;
+            right: 10%;
+            animation-delay: 5s;
+        }
+
+        .shape:nth-child(3) {
+            bottom: 10%;
+            left: 50%;
+            animation-delay: 10s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-30px) rotate(180deg);
+            }
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-section {
+            animation: fadeInDown 1s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .main-heading {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 800;
+            line-height: 1.2;
+            animation: fadeInUp 1s ease-out 0.3s both;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+
+        .countdown-container {
+            animation: fadeInUp 1s ease-out 0.7s both;
+        }
+
+        .countdown-box {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .countdown-box:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 12px 40px rgba(59, 130, 246, 0.3);
+        }
+
+        .countdown-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .countdown-label {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: 600;
+        }
+
+        .subscribe-section {
+            animation: fadeInUp 1s ease-out 0.9s both;
+        }
+
+        .subscribe-box {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2.5rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .subscribe-input {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.875rem 1.25rem;
+            border-radius: 12px;
+            font-size: 1rem;
+        }
+
+        .subscribe-input:focus {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: #3b82f6;
+            color: white;
+            box-shadow: 0 0 0 0.25rem rgba(59, 130, 246, 0.25);
+        }
+
+        .subscribe-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .btn-subscribe {
+            padding: 0.875rem 2.5rem;
+            font-weight: 600;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            border: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+        }
+
+        .btn-subscribe:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(59, 130, 246, 0.6);
+        }
+
+        .social-links {
+            animation: fadeInUp 1s ease-out 1.1s both;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-link:hover {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+        }
+
+        .back-home-btn {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0.75rem 1.5rem;
+            border-radius: 12px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            z-index: 10;
+        }
+
+        .back-home-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            transform: translateX(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .countdown-number {
+                font-size: 2.5rem;
+            }
+
+            .countdown-box {
+                padding: 1.5rem 1rem;
+            }
+
+            .subscribe-box {
+                padding: 1.5rem;
+            }
+
+            .back-home-btn {
+                top: 1rem;
+                left: 1rem;
+                padding: 0.5rem 1rem;
+                font-size: 0.875rem;
+            }
+        }
+    </style>
 </head>
 
-<body class="d-flex align-items-center min-vh-100 bg-dark text-white" data-theme="dark"
-    style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);">
+<body class="coming-soon-page d-flex align-items-center" data-theme="dark">
 
-    <!-- Language Toggle -->
-    <div class="position-absolute top-0 end-0 p-4">
-        <button class="btn btn-link text-white p-0" id="language-toggle" aria-label="Switch Language">
-            <i class="fas fa-language fa-lg"></i>
-        </button>
+    <!-- Animated Background Shapes -->
+    <div class="animated-bg-shapes">
+        <i class="fas fa-tower-cell shape fa-10x"></i>
+        <i class="fas fa-satellite-dish shape fa-8x"></i>
+        <i class="fas fa-network-wired shape fa-9x"></i>
     </div>
 
-    <div class="container text-center">
+    <!-- Back to Home Button -->
+    <a href="index.html" class="back-home-btn">
+        <i class="fas fa-arrow-left me-2"></i>Back to Home
+    </a>
+
+    <div class="container content-wrapper">
         <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <div class="mb-5">
-                    <a href="index.html" class="text-decoration-none text-white fs-2 fw-bold">
-                        <i class="fas fa-tower-cell me-2 text-primary"></i>Stackly
+            <div class="col-lg-10 col-xl-9">
+                <!-- Logo Section -->
+                <div class="logo-section text-center mb-5">
+                    <a href="index.html" class="text-decoration-none text-white">
+                        <h1 class="fs-1 fw-bold mb-0">
+                            <i class="fas fa-tower-cell me-2 text-primary"></i>Stackly
+                        </h1>
                     </a>
                 </div>
-                <h1 class="display-3 fw-bold mb-4">New Networks <br><span class="text-primary">Under Deployment</span>
-                </h1>
-                <p class="lead text-white-50 mb-5">We're building something revolutionary in the telecom space. Stay
-                    tuned for our next-generation infrastructure solutions.</p>
 
-                <div class="row g-3 justify-content-center mb-5">
-                    <div class="col-6 col-md-2">
-                        <div class="p-4 bg-white bg-opacity-10 rounded-3">
-                            <h2 class="fw-bold mb-0">12</h2>
-                            <small class="text-white-50">Days</small>
+                <!-- Main Heading -->
+                <h2 class="main-heading text-center mb-4">
+                    <span class="text-white">Something Amazing</span><br>
+                    <span class="text-primary">Coming Soon</span>
+                </h2>
+
+                <!-- Subtitle -->
+                <p class="subtitle text-center text-white-50 mb-5 px-3">
+                    We're building something revolutionary in the telecom space.<br class="d-none d-md-block">
+                    Stay tuned for our next-generation infrastructure solutions.
+                </p>
+
+                <!-- Countdown Timer -->
+                <div class="countdown-container mb-5">
+                    <div class="row g-3 g-md-4 justify-content-center">
+                        <div class="col-6 col-md-3">
+                            <div class="countdown-box text-center">
+                                <div class="countdown-number" id="days">12</div>
+                                <div class="countdown-label">Days</div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <div class="p-4 bg-white bg-opacity-10 rounded-3">
-                            <h2 class="fw-bold mb-0">08</h2>
-                            <small class="text-white-50">Hours</small>
+                        <div class="col-6 col-md-3">
+                            <div class="countdown-box text-center">
+                                <div class="countdown-number" id="hours">08</div>
+                                <div class="countdown-label">Hours</div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <div class="p-4 bg-white bg-opacity-10 rounded-3">
-                            <h2 class="fw-bold mb-0">45</h2>
-                            <small class="text-white-50">Mins</small>
+                        <div class="col-6 col-md-3">
+                            <div class="countdown-box text-center">
+                                <div class="countdown-number" id="minutes">45</div>
+                                <div class="countdown-label">Minutes</div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <div class="p-4 bg-white bg-opacity-10 rounded-3">
-                            <h2 class="fw-bold mb-0">30</h2>
-                            <small class="text-white-50">Secs</small>
+                        <div class="col-6 col-md-3">
+                            <div class="countdown-box text-center">
+                                <div class="countdown-number" id="seconds">30</div>
+                                <div class="countdown-label">Seconds</div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="max-width-500 mx-auto">
-                    <h6 class="fw-bold mb-3 text-uppercase letter-spacing-1">Get notified on launch</h6>
-                    <div class="input-group mb-4">
-                        <input type="email" class="form-control bg-transparent border-secondary text-white"
-                            placeholder="Enter your email" aria-label="Email">
-                        <button class="btn btn-primary px-4 py-2" type="button">Subscribe</button>
+                <!-- Subscribe Section -->
+                <div class="subscribe-section mb-5">
+                    <div class="subscribe-box">
+                        <h5 class="text-white text-center mb-4 fw-bold">
+                            <i class="fas fa-bell me-2 text-primary"></i>Get Notified on Launch
+                        </h5>
+                        <div class="row g-3">
+                            <div class="col-md-8">
+                                <input type="email" class="form-control subscribe-input w-100"
+                                    placeholder="Enter your email address" aria-label="Email">
+                            </div>
+                            <div class="col-md-4">
+                                <button class="btn btn-subscribe w-100" type="button">
+                                    <i class="fas fa-paper-plane me-2"></i>Subscribe
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="d-flex gap-4 justify-content-center mt-5">
-                    <a href="#" class="text-white text-decoration-none"><i class="fab fa-linkedin fa-lg"></i></a>
-                    <a href="#" class="text-white text-decoration-none"><i class="fab fa-twitter fa-lg"></i></a>
-                    <a href="#" class="text-white text-decoration-none"><i class="fab fa-instagram fa-lg"></i></a>
+                <!-- Social Links -->
+                <div class="social-links text-center">
+                    <h6 class="text-white-50 mb-4 text-uppercase" style="letter-spacing: 2px; font-size: 0.75rem;">
+                        Follow Us
+                    </h6>
+                    <div class="d-flex gap-3 justify-content-center">
+                        <a href="#" class="social-link text-white text-decoration-none">
+                            <i class="fab fa-linkedin fa-lg"></i>
+                        </a>
+                        <a href="#" class="social-link text-white text-decoration-none">
+                            <i class="fab fa-twitter fa-lg"></i>
+                        </a>
+                        <a href="#" class="social-link text-white text-decoration-none">
+                            <i class="fab fa-instagram fa-lg"></i>
+                        </a>
+                        <a href="#" class="social-link text-white text-decoration-none">
+                            <i class="fab fa-facebook fa-lg"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -81,6 +389,31 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+        // Countdown Timer (Optional - you can set a real target date)
+        function updateCountdown() {
+            // Set target date (example: 30 days from now)
+            const targetDate = new Date();
+            targetDate.setDate(targetDate.getDate() + 30);
+
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        }
+
+        // Update countdown every second
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
 </body>
 
 </html>

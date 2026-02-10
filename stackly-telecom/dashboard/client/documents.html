@@ -34,8 +34,8 @@
                 <a href="documents.html" class="sidebar-link active">
                     <i class="fas fa-file-alt"></i> <span>Documents</span>
                 </a>
-                <a href="messages.html" class="sidebar-link">
-                    <i class="fas fa-envelope"></i> <span>Messages</span>
+                <a href="../../login.html" class="sidebar-link d-md-none text-danger">
+                    <i class="fas fa-sign-out-alt"></i> <span>Logout</span>
                 </a>
             </nav>
 
@@ -87,7 +87,10 @@
                             <div class="mb-3 text-danger display-6"><i class="far fa-file-pdf"></i></div>
                             <h6 class="fw-bold text-truncate">Contract_Signed.pdf</h6>
                             <small class="text-muted d-block mb-3">2.4 MB • Jan 10</small>
-                            <button class="btn btn-sm btn-outline-secondary">Download</button>
+                            <button class="btn btn-sm btn-outline-primary download-doc-btn"
+                                data-filename="Contract_Signed.pdf" data-filesize="2.4 MB">
+                                Download
+                            </button>
                         </div>
                     </div>
                     <div class="col-md-3">
@@ -95,7 +98,10 @@
                             <div class="mb-3 text-primary display-6"><i class="far fa-file-word"></i></div>
                             <h6 class="fw-bold text-truncate">Specs_v2.docx</h6>
                             <small class="text-muted d-block mb-3">1.1 MB • Jan 12</small>
-                            <button class="btn btn-sm btn-outline-secondary">Download</button>
+                            <button class="btn btn-sm btn-outline-primary download-doc-btn"
+                                data-filename="Specs_v2.docx" data-filesize="1.1 MB">
+                                Download
+                            </button>
                         </div>
                     </div>
                     <div class="col-md-3">
@@ -103,7 +109,10 @@
                             <div class="mb-3 text-success display-6"><i class="far fa-file-excel"></i></div>
                             <h6 class="fw-bold text-truncate">Budget.xlsx</h6>
                             <small class="text-muted d-block mb-3">0.5 MB • Jan 15</small>
-                            <button class="btn btn-sm btn-outline-secondary">Download</button>
+                            <button class="btn btn-sm btn-outline-primary download-doc-btn" data-filename="Budget.xlsx"
+                                data-filesize="0.5 MB">
+                                Download
+                            </button>
                         </div>
                     </div>
                     <div class="col-md-3">
@@ -112,7 +121,8 @@
                             <div class="mb-3 text-muted display-6"><i class="fas fa-cloud-upload-alt"></i></div>
                             <h6 class="fw-bold text-truncate">Upload New</h6>
                             <small class="text-muted d-block mb-3">Drag & Drop</small>
-                            <button class="btn btn-sm btn-outline-primary">Browse</button>
+                            <button class="btn btn-sm btn-outline-primary" id="browseFileBtn">Browse</button>
+                            <input type="file" id="fileUploadInput" style="display: none;" multiple>
                         </div>
                     </div>
                 </div>

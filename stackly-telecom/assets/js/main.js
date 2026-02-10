@@ -398,7 +398,7 @@ function initBlogPagination() {
         });
 
         document.getElementById(`page-${currentPage}`).classList.add('active');
-        
+
         if (currentPage === 1) {
             document.getElementById('pagination-prev').classList.add('disabled');
         } else if (currentPage === totalPages) {
@@ -413,7 +413,7 @@ function initBlogPagination() {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const page = link.getAttribute('data-page');
-            
+
             if (page === 'prev') {
                 showPage(currentPage - 1);
             } else if (page === 'next') {

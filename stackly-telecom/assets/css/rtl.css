@@ -1,31 +1,164 @@
-/* RTL Support - Reversed Text (eomH style) */
-[dir="rtl"] body {
-    text-align: right;
-    direction: rtl;
-}
+/* 
+ * Stackly - RTL Support Styles
+ * Mirroring and specific overrides for Right-to-Left languages
+ */
 
-/* Ensure text is clearly visible, aligned, and reversed for form elements too */
-[dir="rtl"] h1,
-[dir="rtl"] h2,
-[dir="rtl"] h3,
-[dir="rtl"] h4,
-[dir="rtl"] h5,
-[dir="rtl"] h6,
-[dir="rtl"] p,
-[dir="rtl"] span,
-[dir="rtl"] a,
-[dir="rtl"] li,
-[dir="rtl"] label,
-[dir="rtl"] button,
-[dir="rtl"] .btn,
-[dir="rtl"] select,
-[dir="rtl"] option,
-[dir="rtl"] input {
+[dir="rtl"] {
     text-align: right;
 }
 
-/* Fix fixed elements that might have been broken by previous transform */
-[dir="rtl"] .fixed-top {
-    position: fixed !important;
-    width: 100%;
+/* Sidebar Mirroring */
+[dir="rtl"] .sidebar {
+    border-right: none;
+    border-left: 1px solid var(--border-color);
+}
+
+[dir="rtl"] .sidebar-link {
+    border-left: none;
+    border-right: 3px solid transparent;
+}
+
+[dir="rtl"] .sidebar-link:hover,
+[dir="rtl"] .sidebar-link.active {
+    border-right-color: var(--primary-color);
+}
+
+[dir="rtl"] .sidebar-link i {
+    margin-right: 0;
+    margin-left: 12px;
+}
+
+/* Header Mirroring */
+[dir="rtl"] .dashboard-header {
+    padding: 0 2rem;
+}
+
+/* Mobile RTL Adjustments - CRITICAL FIX */
+@media (max-width: 768px) {
+    [dir="rtl"] .sidebar {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        left: auto !important;
+        right: 0 !important;
+        transform: translateX(100%) !important;
+        transition: transform 0.3s ease !important;
+    }
+
+    [dir="rtl"].sidebar-open .sidebar {
+        transform: translateX(0) !important;
+    }
+
+    [dir="rtl"] .sidebar-toggler {
+        margin-right: 0;
+        margin-left: 1rem;
+    }
+
+    [dir="rtl"] .dashboard-header-right {
+        margin-right: auto;
+        margin-left: 0;
+    }
+}
+
+/* Utility classes mirroring */
+[dir="rtl"] .me-0 {
+    margin-right: 0 !important;
+}
+
+[dir="rtl"] .me-1 {
+    margin-right: 0 !important;
+    margin-left: 0.25rem !important;
+}
+
+[dir="rtl"] .me-2 {
+    margin-right: 0 !important;
+    margin-left: 0.5rem !important;
+}
+
+[dir="rtl"] .me-3 {
+    margin-right: 0 !important;
+    margin-left: 1rem !important;
+}
+
+[dir="rtl"] .me-4 {
+    margin-right: 0 !important;
+    margin-left: 1.5rem !important;
+}
+
+[dir="rtl"] .me-5 {
+    margin-right: 0 !important;
+    margin-left: 3rem !important;
+}
+
+[dir="rtl"] .me-auto {
+    margin-right: 0 !important;
+    margin-left: auto !important;
+}
+
+[dir="rtl"] .ms-0 {
+    margin-left: 0 !important;
+}
+
+[dir="rtl"] .ms-1 {
+    margin-left: 0 !important;
+    margin-right: 0.25rem !important;
+}
+
+[dir="rtl"] .ms-2 {
+    margin-left: 0 !important;
+    margin-right: 0.5rem !important;
+}
+
+[dir="rtl"] .ms-3 {
+    margin-left: 0 !important;
+    margin-right: 1rem !important;
+}
+
+[dir="rtl"] .ms-4 {
+    margin-left: 0 !important;
+    margin-right: 1.5rem !important;
+}
+
+[dir="rtl"] .ms-5 {
+    margin-left: 0 !important;
+    margin-right: 3rem !important;
+}
+
+[dir="rtl"] .ms-auto {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+}
+
+/* Responsive utility flips used in navbar */
+@media (min-width: 992px) {
+    [dir="rtl"] .ms-lg-4 {
+        margin-left: 0 !important;
+        margin-right: 1.5rem !important;
+    }
+
+    [dir="rtl"] .ms-lg-auto {
+        margin-left: 0 !important;
+        margin-right: auto !important;
+    }
+}
+
+[dir="rtl"] .text-end {
+    text-align: left !important;
+}
+
+[dir="rtl"] .text-start {
+    text-align: right !important;
+}
+
+[dir="rtl"] .float-end {
+    float: left !important;
+}
+
+[dir="rtl"] .float-start {
+    float: right !important;
+}
+
+/* Fix for navbar-brand spacing in RTL */
+[dir="rtl"] .navbar-brand i {
+    margin-right: 0 !important;
+    margin-left: 0.5rem !important;
 }
