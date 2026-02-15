@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 /*                                Theme Toggle                                */
 /* -------------------------------------------------------------------------- */
 function initTheme() {
-    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggles = document.querySelectorAll('#theme-toggle, #theme-toggle-mobile');
     const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
     // Get saved preference or use system preference
@@ -28,23 +28,24 @@ function initTheme() {
     // Apply initial theme
     setTheme(currentTheme);
 
-    if (themeToggle) {
+    themeToggles.forEach(toggle => {
         // Update icon based on initial theme
-        updateThemeIcon(currentTheme);
+        updateThemeIconForElement(toggle, currentTheme);
 
-        themeToggle.addEventListener('click', () => {
+        toggle.addEventListener('click', () => {
             const newTheme = document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
             setTheme(newTheme);
-            updateThemeIcon(newTheme);
+            // Update all toggles
+            themeToggles.forEach(t => updateThemeIconForElement(t, newTheme));
         });
-    }
+    });
 
     // Listen for system preference changes
     prefersDarkScheme.addEventListener('change', (e) => {
         if (!localStorage.getItem('theme')) {
             const newTheme = e.matches ? 'dark' : 'light';
             setTheme(newTheme);
-            updateThemeIcon(newTheme);
+            themeToggles.forEach(t => updateThemeIconForElement(t, newTheme));
         }
     });
 }
@@ -55,10 +56,14 @@ function setTheme(theme) {
 }
 
 function updateThemeIcon(theme) {
-    const themeToggle = document.getElementById('theme-toggle');
-    if (!themeToggle) return;
+    const themeToggles = document.querySelectorAll('#theme-toggle, #theme-toggle-mobile');
+    themeToggles.forEach(t => updateThemeIconForElement(t, theme));
+}
 
-    const icon = themeToggle.querySelector('i');
+function updateThemeIconForElement(element, theme) {
+    if (!element) return;
+
+    const icon = element.querySelector('i');
     if (icon) {
         if (theme === 'dark') {
             icon.className = 'fas fa-sun';
@@ -72,7 +77,7 @@ function updateThemeIcon(theme) {
 /*                                Language Toggle                             */
 /* -------------------------------------------------------------------------- */
 function initLanguage() {
-    const langToggle = document.getElementById('language-toggle');
+    const langToggles = document.querySelectorAll('#language-toggle, #language-toggle-mobile');
 
     // Get saved preference or use default
     const currentLang = localStorage.getItem('language') || 'ltr';
@@ -80,17 +85,18 @@ function initLanguage() {
     // Apply initial language
     setLanguage(currentLang);
 
-    if (langToggle) {
+    langToggles.forEach(toggle => {
         // Update icon based on initial language
-        updateLanguageIcon(currentLang);
+        updateLanguageIconForElement(toggle, currentLang);
 
-        langToggle.addEventListener('click', () => {
+        toggle.addEventListener('click', () => {
             const currentDir = document.body.getAttribute('dir') || 'ltr';
             const newLang = currentDir === 'rtl' ? 'ltr' : 'rtl';
             setLanguage(newLang);
-            updateLanguageIcon(newLang);
+            // Update all toggles
+            langToggles.forEach(t => updateLanguageIconForElement(t, newLang));
         });
-    }
+    });
 }
 
 function setLanguage(lang) {
@@ -100,17 +106,17 @@ function setLanguage(lang) {
 }
 
 function updateLanguageIcon(lang) {
-    const langToggle = document.getElementById('language-toggle');
-    if (!langToggle) return;
+    const langToggles = document.querySelectorAll('#language-toggle, #language-toggle-mobile');
+    langToggles.forEach(t => updateLanguageIconForElement(t, lang));
+}
 
-    // const icon = langToggle.querySelector('i'); // Icon stays as fa-language (letters)
+function updateLanguageIconForElement(element, lang) {
+    if (!element) return;
 
     if (lang === 'rtl') {
-        // if (icon) icon.className = 'fas fa-globe';
-        langToggle.setAttribute('aria-label', 'Switch to English');
+        element.setAttribute('aria-label', 'Switch to English');
     } else {
-        // if (icon) icon.className = 'fas fa-language';
-        langToggle.setAttribute('aria-label', 'Switch to Arabic (RTL)');
+        element.setAttribute('aria-label', 'Switch to Arabic (RTL)');
     }
 }
 
@@ -178,7 +184,7 @@ function initA11y() {
 function initDemoAuth() {
     // Clear session if on login page
     if (window.location.pathname.includes('login.html')) {
-        localStorage.removeItem('stackly_session');
+        localStorage.removeItem('Stackly_session');
     }
 
     const loginForm = document.getElementById('loginForm');
@@ -241,14 +247,14 @@ function handleLogin() {
     // Demo Logic
     if (password === 'admin') {
         // Success
-        const role = email.endsWith('@stackly.com') ? 'admin' : 'client';
+        const role = email.endsWith('@Stackly.com') ? 'admin' : 'client';
         const session = {
             user: email,
             role: role,
             token: 'demo-token-' + Date.now()
         };
 
-        localStorage.setItem('stackly_session', JSON.stringify(session));
+        localStorage.setItem('Stackly_session', JSON.stringify(session));
 
         // Show success state briefly
         const btn = document.querySelector('button[type="submit"]');

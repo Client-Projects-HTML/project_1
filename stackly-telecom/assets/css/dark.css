@@ -30,12 +30,23 @@
     /* Shadows */
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.6), 0 1px 2px rgba(0, 0, 0, 0.5);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.6), 0 2px 4px -1px rgba(0, 0, 0, 0.5);
+
+    /* Offcanvas (Mobile Menu) - Dark Mode */
+    --offcanvas-bg: rgba(15, 23, 42, 0.95);
+    --offcanvas-text: #ffffff;
+    --offcanvas-text-muted: rgba(255, 255, 255, 0.6);
+    --offcanvas-border: rgba(255, 255, 255, 0.08);
+    --offcanvas-link-hover: rgba(255, 255, 255, 0.05);
+    --offcanvas-active-bg: linear-gradient(90deg, rgba(13, 110, 253, 0.2), rgba(13, 110, 253, 0.05));
+    --offcanvas-close-filter: invert(1) grayscale(100%) brightness(200%);
+    --offcanvas-icon-bg: rgba(255, 255, 255, 0.05);
+    --offcanvas-title-gradient: linear-gradient(45deg, #ffffff, rgba(255, 255, 255, 0.7));
 }
 
 /* ==========================================================================
    2. BASE ELEMENTS
    ========================================================================== */
-[data-theme="dark"] body {
+body[data-theme="dark"] {
     background-color: var(--bg-body);
     color: var(--text-main);
 }
@@ -136,6 +147,7 @@
    ========================================================================== */
 
 /* Utilities */
+[data-theme="dark"].bg-light,
 [data-theme="dark"] .bg-light {
     background-color: var(--bg-surface) !important;
 }
@@ -367,7 +379,8 @@
     color: #4ade80 !important;
 }
 
-[data-theme="dark"] .text-primary {
+[data-theme="dark"] .text-primary,
+[data-theme="dark"] .text-telecom {
     color: #60a5fa !important;
 }
 
@@ -376,7 +389,7 @@
 }
 
 [data-theme="dark"] .text-warning {
-    color: #fbbf24 !important;
+    color: #60a5fa !important;
 }
 
 [data-theme="dark"] .text-danger {

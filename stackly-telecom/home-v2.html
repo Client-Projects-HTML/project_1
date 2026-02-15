@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SaaS Solutions | Stackly Telecom Template</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -13,34 +14,178 @@
 </head>
 
 <body data-theme="light">
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white border-bottom shadow-sm">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 transition-all" id="mainNav">
         <div class="container">
             <a class="navbar-brand fw-bold fs-3 text-telecom" href="index.html">
-                <i class="fas fa-tower-cell me-2"></i>Stackly
+                Stackly
             </a>
-            <div class="d-flex align-items-center ms-auto order-lg-3">
-                <button class="btn btn-link text-body p-0 me-3" id="language-toggle" aria-label="Switch Language">
-                    <i class="fas fa-language"></i>
-                </button>
-                <button class="btn btn-link text-body p-0 me-3" id="theme-toggle" aria-label="Toggle Dark Mode">
-                    <i class="fas fa-moon"></i>
-                </button>
-                <a href="login.html" class="btn btn-outline-primary btn-sm me-2 d-none d-sm-inline-block">Login</a>
-                <a href="register.html" class="btn btn-primary btn-sm d-none d-sm-inline-block">Get Started</a>
-                <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarContent">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-            <div class="collapse navbar-collapse order-lg-2" id="navbarContent">
-                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 fw-medium">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="home-v2.html">SaaS Mode</a></li>
+            <button class="navbar-toggler ms-2 d-lg-none" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Home
+                        </a>
+                        <ul class="dropdown-menu shadow-sm border-0">
+                            <li><a class="dropdown-item py-2" href="index.html">Home 1 (Modern)</a></li>
+                            <li><a class="dropdown-item py-2 active" href="home-v2.html">Home 2 (SaaS)</a></li>
+                        </ul>
+                    </li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
+                <div class="d-none d-lg-flex align-items-center ms-lg-4 mt-3 mt-lg-0 gap-3">
+                    <div class="btn-group">
+                        <a href="login.html" class="btn btn-outline-primary btn-sm px-3 btn-auth border-end-0">Login</a>
+                        <button type="button"
+                            class="btn btn-outline-primary btn-sm dropdown-toggle dropdown-toggle-split px-2 btn-auth"
+                            data-bs-toggle="dropdown" aria-expanded="false" style="border-left: none;">
+                            <span class="visually-hidden">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0 mt-2">
+                            <li>
+                                <a class="dropdown-item py-2" href="dashboard/client/index.html">
+                                    <i class="fas fa-user me-2 opacity-75"></i>Client Dashboard
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item py-2" href="dashboard/admin/index.html">
+                                    <i class="fas fa-user-shield me-2 opacity-75"></i>Admin Dashboard
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="register.html" class="btn btn-outline-primary btn-sm px-3 btn-auth">Sign Up</a>
+
+                    <!-- Profile Dropdown -->
+                    <div class="dropdown">
+                        <button class="btn btn-link text-body p-0 border-0" type="button" id="profileDropdown"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <div class="user-avatar-sm-wrapper">
+                                <i class="fas fa-user-circle fs-4"></i>
+                            </div>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0 mt-2"
+                            aria-labelledby="profileDropdown">
+                            <li class="px-3 py-2 border-bottom mb-2">
+                                <div class="fw-bold small">Guest User</div>
+                                <div class="text-muted extra-small" style="font-size: 0.75rem;">Join us for more
+                                    features</div>
+                            </li>
+                            <li><a class="dropdown-item py-2" href="dashboard/client/index.html"><i
+                                        class="fas fa-gauge-high me-2 opacity-75"></i>Dashboard</a></li>
+                            <li><a class="dropdown-item py-2" href="dashboard/client/settings.html"><i
+                                        class="fas fa-user-gear me-2 opacity-75"></i>Profile Settings</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li class="px-3 py-2 mt-1">
+                                <div class="text-muted small mb-2">Quick Sign-in</div>
+                                <div class="d-flex gap-3 justify-content-center border rounded p-2 bg-light">
+                                    <a href="#" class="text-danger" title="Google"><i class="fab fa-google"></i></a>
+                                    <a href="#" class="text-dark" title="Apple"><i class="fab fa-apple"></i></a>
+                                    <a href="#" class="text-primary" title="Microsoft"><i
+                                            class="fab fa-microsoft"></i></a>
+                                </div>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item py-2 text-danger" href="login.html"><i
+                                        class="fas fa-sign-out-alt me-2 opacity-75"></i>Sign Out</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Utility Toggles -->
+                    <button class="btn btn-link text-body p-0 d-none d-lg-inline-block" id="language-toggle"
+                        aria-label="Switch Language">
+                        <i class="fas fa-language"></i>
+                    </button>
+                    <button class="btn btn-link text-body p-0 d-none d-lg-inline-block" id="theme-toggle"
+                        aria-label="Toggle Dark Mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Stackly</h5>
+                <div class="mobile-header-icons ms-auto me-3">
+                    <button class="btn btn-link p-0" id="language-toggle-mobile" aria-label="Switch Language">
+                        <i class="fas fa-language"></i>
+                    </button>
+                    <button class="btn btn-link p-0" id="theme-toggle-mobile" aria-label="Toggle Dark Mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+                <button type="button" class="btn-close btn-close" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Home
+                        </a>
+                        <ul class="dropdown-menu shadow-sm border-0">
+                            <li><a class="dropdown-item py-2" href="index.html">Home 1 (Modern)</a></li>
+                            <li><a class="dropdown-item py-2 active" href="home-v2.html">Home 2 (SaaS)</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="d-flex flex-column gap-3 mt-4">
+                    <div class="d-flex gap-2">
+                        <div class="btn-group flex-grow-1">
+                            <a href="login.html" class="btn btn-outline-primary btn-sm px-3 border-end-0">Login</a>
+                            <button type="button"
+                                class="btn btn-outline-primary btn-sm dropdown-toggle dropdown-toggle-split"
+                                data-bs-toggle="dropdown" aria-expanded="false" style="border-left: none;">
+                                <span class="visually-hidden">Toggle Dropdown</span>
+                            </button>
+                            <ul class="dropdown-menu shadow-sm border-0 w-100 mt-2">
+                                <li>
+                                    <a class="dropdown-item py-2" href="dashboard/client/index.html">
+                                        <i class="fas fa-user me-2 opacity-75"></i>Client Dashboard
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item py-2" href="dashboard/admin/index.html">
+                                        <i class="fas fa-user-shield me-2 opacity-75"></i>Admin Dashboard
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="register.html" class="btn btn-outline-primary btn-sm flex-grow-1">Sign Up</a>
+                    </div>
+                    <a href="dashboard/client/index.html" class="btn btn-light btn-sm w-100"><i
+                            class="fas fa-gauge-high me-2"></i>Go to Dashboard</a>
+                    <div class="text-center mt-2">
+                        <small class="text-muted d-block mb-2">Quick Sign-in</small>
+                        <div class="d-flex gap-4 justify-content-center">
+                            <a href="#" class="text-danger fs-5"><i class="fab fa-google"></i></a>
+                            <a href="#" class="text-dark fs-5"><i class="fab fa-apple"></i></a>
+                            <a href="#" class="text-primary fs-5"><i class="fab fa-microsoft"></i></a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
@@ -70,7 +215,7 @@
                 </div>
                 <div class="col-lg-6 mt-5 mt-lg-0 text-center">
                     <div class="position-relative">
-                        <img src="https://placehold.co/600x400/0d6efd/fff?text=SaaS+Dashboard+Mockup"
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200&h=800"
                             class="img-fluid rounded-4 shadow-lg animate-on-scroll" alt="SaaS Mockup">
                         <div class="position-absolute top-100 start-0 translate-middle-y ms-5 d-none d-md-block">
                             <div class="bg-white p-4 rounded-4 shadow-md text-start border border-light">
@@ -111,7 +256,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card border-0 shadow-sm p-4 h-100">
-                        <div class="mb-3 text-warning"><i class="fas fa-file-contract fa-2x"></i></div>
+                        <div class="mb-3 text-primary"><i class="fas fa-file-contract fa-2x"></i></div>
                         <h4 class="fw-bold">Permit Manager</h4>
                         <p class="text-muted small">Steamline government permits and regulatory compliance
                             automatically.</p>
@@ -157,10 +302,88 @@
         </div>
     </section>
 
-    <!-- Simple Footer -->
-    <footer class="py-4 bg-dark text-white text-center">
+    <!-- Stackly Style Footer -->
+    <footer class="footer-new pt-5 pb-0">
         <div class="container">
-            <p class="mb-0 small text-white-50">&copy; 2026 Stackly Telecom. Multi-purpose HTML Template.</p>
+            <div class="row g-5 mb-5">
+                <!-- Col 1: About Stackly (Stackly) -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-uppercase border-start border-primary border-4 ps-3">About Stackly</h5>
+                    <p class="text-white-50 mt-4 mb-4">Leading the way in digital infrastructure. We build the networks
+                        that
+                        connect the world, from fiber optics to 5G deployment.</p>
+                    <div class="d-flex">
+                        <a href="#" class="social-circle-btn"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-circle-btn"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-circle-btn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div class="col-lg-3 col-md-6 col-6">
+                    <h5 class="text-uppercase border-start border-primary border-4 ps-3">Quick Links</h5>
+                    <div class="d-flex flex-column mt-4">
+                        <a href="index.html" class="footer-link-v2">Home</a>
+                        <a href="about.html" class="footer-link-v2">About Us</a>
+                        <a href="services.html" class="footer-link-v2">Services</a>
+                        <a href="blog.html" class="footer-link-v2">Blog</a>
+                        <a href="pricing.html" class="footer-link-v2">Pricing</a>
+                        <a href="contact.html" class="footer-link-v2">Contact</a>
+                        <a href="404.html" class="footer-link-v2">Careers</a>
+                        <a href="coming-soon.html" class="footer-link-v2">Events</a>
+                    </div>
+                </div>
+
+                <!-- Col 3: Services -->
+                <div class="col-lg-3 col-md-6 col-6">
+                    <h5 class="text-uppercase border-start border-primary border-4 ps-3">Services</h5>
+                    <div class="d-flex flex-column mt-4">
+                        <a href="service-details.html?service=fiber" class="footer-link-v2">Fiber Optic Splicing</a>
+                        <a href="service-details.html?service=wireless" class="footer-link-v2">Small Cell & 5G</a>
+                        <a href="service-details.html?service=cabling" class="footer-link-v2">Structured Cabling</a>
+                        <a href="service-details.html?service=civil-works" class="footer-link-v2">OSP Civil Works</a>
+                        <a href="service-details.html?service=maintenance" class="footer-link-v2">Site Audits</a>
+                        <a href="service-details.html?service=maintenance" class="footer-link-v2">Emergency Recovery</a>
+                        <a href="service-details.html?service=rf-eng" class="footer-link-v2">RF Engineering</a>
+                        <a href="service-details.html?service=drone" class="footer-link-v2">Drone Inspections</a>
+                        <a href="service-details.html?service=indoor" class="footer-link-v2">In-Building Wireless</a>
+                    </div>
+                </div><!-- Col 4: Contact Us -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-uppercase border-start border-primary border-4 ps-3">Contact Us</h5>
+                    <div class="mt-4">
+                        <div class="footer-contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h6>Headquarters</h6>
+                                <p>1234 Telecom Blvd, Tech City, TC 90210</p>
+                            </div>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <h6>Phone</h6>
+                                <p>(800) 555-0199<br>24/7 Emergency Line</p>
+                            </div>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h6>Email</h6>
+                                <p>hello@Stackly.com<br>support@Stackly.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-powered-by">
+                <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+                    <p class="mb-0">&copy; 2026 EcoTrack Solutions. All rights reserved.</p>
+                    <p class="mb-0">Powered by <a href="https://www.abhivorn.com/" target="_blank"
+                            class="text-decoration-none">AbhiVorn Technologies Pvt. Ltd.</a></p>
+                </div>
+            </div>
         </div>
     </footer>
 

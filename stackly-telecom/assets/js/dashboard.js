@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     initSidebar();
+    initNotificationBell();
     initCharts();
     initGlobalActions();
     initExportButton();
@@ -47,6 +48,98 @@ function initSidebar() {
     });
 }
 
+function initNotificationBell() {
+    const bellButtons = Array.from(
+        document.querySelectorAll('.dashboard-header-right .header-icon-btn.position-relative')
+    ).filter(btn => btn.querySelector('.fa-bell'));
+
+    if (bellButtons.length === 0) {
+        return;
+    }
+
+    bellButtons.forEach((bellBtn, index) => {
+        if (bellBtn.dataset.notificationsReady === 'true') {
+            return;
+        }
+
+        bellBtn.dataset.notificationsReady = 'true';
+        bellBtn.setAttribute('data-bs-toggle', 'dropdown');
+        bellBtn.setAttribute('aria-expanded', 'false');
+        bellBtn.setAttribute('aria-label', 'Open notifications');
+        bellBtn.setAttribute('type', 'button');
+
+        let wrapper = bellBtn.parentElement;
+        if (!wrapper.classList.contains('dropdown')) {
+            wrapper = document.createElement('div');
+            wrapper.className = 'dropdown';
+            bellBtn.parentNode.insertBefore(wrapper, bellBtn);
+            wrapper.appendChild(bellBtn);
+        }
+
+        let menu = wrapper.querySelector('.notification-dropdown-menu');
+        if (!menu) {
+            menu = document.createElement('ul');
+            menu.className = 'dropdown-menu dropdown-menu-end shadow-sm border-0 mt-2 notification-dropdown-menu';
+            menu.style.minWidth = '280px';
+            menu.innerHTML = `
+                <li class="px-3 py-2 border-bottom">
+                    <div class="fw-bold small">Notifications</div>
+                    <div class="text-muted" style="font-size:0.78rem;">Latest updates from your projects</div>
+                </li>
+                <li>
+                    <a class="dropdown-item py-2" href="#" data-notification-item="Project status updated">
+                        <i class="fas fa-circle-info text-primary me-2"></i>Project status updated
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item py-2" href="#" data-notification-item="New message received">
+                        <i class="fas fa-message text-success me-2"></i>New message received
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item py-2" href="#" data-notification-item="Task deadline approaching">
+                        <i class="fas fa-clock text-warning me-2"></i>Task deadline approaching
+                    </a>
+                </li>
+                <li><hr class="dropdown-divider"></li>
+                <li>
+                    <a class="dropdown-item py-2 text-center text-primary" href="#" data-notification-item="All notifications marked as read">
+                        View all notifications
+                    </a>
+                </li>
+            `;
+            wrapper.appendChild(menu);
+        }
+
+        menu.addEventListener('click', (e) => {
+            const action = e.target.closest('[data-notification-item]');
+            if (!action) {
+                return;
+            }
+
+            e.preventDefault();
+            const message = action.getAttribute('data-notification-item');
+            showToast(message, 'info');
+
+            const unreadDot = bellBtn.querySelector('.bg-danger.rounded-circle');
+            if (unreadDot) {
+                unreadDot.classList.remove('bg-danger');
+                unreadDot.classList.add('bg-secondary');
+            }
+
+            if (window.bootstrap && bootstrap.Dropdown) {
+                const instance = bootstrap.Dropdown.getOrCreateInstance(bellBtn);
+                instance.hide();
+            }
+        });
+
+        if (!bellBtn.id) {
+            bellBtn.id = `notification-bell-${index + 1}`;
+        }
+        menu.setAttribute('aria-labelledby', bellBtn.id);
+    });
+}
+
 /**
  * Global Interactivity for Dashboard Buttons
  */
@@ -57,7 +150,7 @@ function initGlobalActions() {
         if (btn.textContent.includes('Logout')) {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
-                localStorage.removeItem('stackly_session');
+                localStorage.removeItem('Stackly_session');
                 window.location.href = '../../login.html';
             });
         }

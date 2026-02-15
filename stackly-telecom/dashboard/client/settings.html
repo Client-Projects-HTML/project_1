@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Settings - Client Dashboard</title>
+    <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dark.css">
+    <link rel="stylesheet" href="../../assets/css/rtl.css">
+</head>
+
+<body class="dashboard-page" data-theme="light">
+    <div class="dashboard-layout" id="layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="p-4 mb-4">
+                <a href="../../index.html" class="d-flex align-items-center text-decoration-none text-telecom">
+                    <span class="fs-4 fw-bold">Stackly</span>
+                </a>
+                <div class="small text-muted mt-1">Client Portal</div>
+            </div>
+
+            <nav class="flex-grow-1">
+                <a href="index.html" class="sidebar-link">
+                    <i class="fas fa-th-large"></i> <span>Overview</span>
+                </a>
+                <a href="my-projects.html" class="sidebar-link">
+                    <i class="fas fa-project-diagram"></i> <span>My Projects</span>
+                </a>
+                <a href="documents.html" class="sidebar-link">
+                    <i class="fas fa-file-alt"></i> <span>Documents</span>
+                </a>
+                <a href="settings.html" class="sidebar-link active">
+                    <i class="fas fa-cog"></i> <span>Settings</span>
+                </a>
+</nav>
+
+            <div class="p-4 mt-auto">
+                <a href="../../login.html" class="btn btn-outline-danger btn-sm w-100">
+                    <i class="fas fa-sign-out-alt me-2"></i>Logout
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Unified Dashboard Header -->
+            <header class="dashboard-header">
+                <div class="d-flex align-items-center">
+                    <button class="header-icon-btn sidebar-toggler me-3">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h4 class="fw-bold mb-0 d-none d-md-block">Settings</h4>
+                </div>
+                <div class="dashboard-header-right">
+                    <button class="header-icon-btn position-relative">
+                        <i class="far fa-bell"></i>
+                        <span
+                            class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"
+                            style="width: 8px; height: 8px;"></span>
+                    </button>
+                    <div class="user-profile-chip">
+                        <img src="https://placehold.co/32x32/fff/333?text=C" class="user-avatar-sm" alt="User">
+                        <div class="user-info-text d-none d-md-flex">
+                            <span class="user-name-text">David Client</span>
+                            <span class="user-role-text">Client User</span>
+                        </div>
+                    </div>
+                    <button class="header-icon-btn" id="language-toggle" aria-label="Switch Language">
+                        <i class="fas fa-language"></i>
+                    </button>
+                    <button class="header-icon-btn" id="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </header>
+
+            <div class="container-fluid p-4">
+                <div class="row g-4">
+                    <!-- Profile Information -->
+                    <div class="col-lg-8">
+                        <div class="dashboard-card p-4">
+                            <h5 class="fw-bold mb-4">Profile Information</h5>
+                            <form>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label small text-muted">Full Name</label>
+                                        <input type="text" class="form-control" value="David Client">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small text-muted">Email Address</label>
+                                        <input type="email" class="form-control" value="david@example.com">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small text-muted">Phone Number</label>
+                                        <input type="tel" class="form-control" value="+1 (555) 000-1122">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small text-muted">Company Name</label>
+                                        <input type="text" class="form-control" value="Client Corp Inc.">
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-telecom px-4">Save Changes</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Security -->
+                        <div class="dashboard-card p-4 mt-4">
+                            <h5 class="fw-bold mb-4">Security</h5>
+                            <form>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label small text-muted">Current Password</label>
+                                        <input type="password" class="form-control">
+                                    </div>
+                                    <div class="col-12"></div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small text-muted">New Password</label>
+                                        <input type="password" class="form-control">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small text-muted">Confirm New Password</label>
+                                        <input type="password" class="form-control">
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-outline-primary px-4">Update
+                                            Password</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Side Panels -->
+                    <div class="col-lg-4">
+                        <div class="dashboard-card p-4">
+                            <h5 class="fw-bold mb-3">Notification Settings</h5>
+                            <div class="d-flex flex-column gap-3">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="emailNotif" checked>
+                                    <label class="form-check-label" for="emailNotif">Email Notifications</label>
+                                </div>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="smsNotif">
+                                    <label class="form-check-label" for="smsNotif">SMS Alerts</label>
+                                </div>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="projectNotif" checked>
+                                    <label class="form-check-label" for="projectNotif">Project Status Updates</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-card p-4 mt-4 bg-light bg-opacity-10 border-telecom text-center">
+                            <i class="fas fa-shield-alt text-telecom fs-1 mb-3"></i>
+                            <h6 class="fw-bold">Privacy Policy</h6>
+                            <p class="small text-muted">View how we handle and protect your personal information.</p>
+                            <a href="#" class="btn btn-sm btn-link text-telecom p-0">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/dashboard.js"></script>
+</body>
+
+</html>
+
+
